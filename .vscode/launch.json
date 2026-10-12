@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeyMelodyMac}",
+            "name": "Debug onebuds-probe",
+            "target": "onebuds-probe",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug onebuds-probe"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeyMelodyMac}",
+            "name": "Release onebuds-probe",
+            "target": "onebuds-probe",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release onebuds-probe"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeyMelodyMac}",
+            "name": "Debug OneBuds",
+            "target": "OneBuds",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug OneBuds"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:HeyMelodyMac}",
+            "name": "Release OneBuds",
+            "target": "OneBuds",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release OneBuds"
+        }
+    ]
+}

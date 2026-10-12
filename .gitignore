@@ -1,0 +1,7 @@
+.build/
+build/
+*.app
+.swiftpm/
+# Probe reports contain device details; share them deliberately, not via git.
+Diagnostics/
+.DS_Store
