@@ -37,7 +37,7 @@ private func simulatedSession(timeout: Duration = .milliseconds(400),
     @Test func subscribesOnlyToOfferedEvents() async throws {
         let (_, transport, _) = try await simulatedSession()
         let subscribe = await transport.sentFrames.first { $0.command == 0x0205 }
-        #expect(subscribe?.payload == [0x03, 0x01, 0x02, 0x03])
+        #expect(subscribe?.payload == [0x05, 0x01, 0x02, 0x03, 0x04, 0x08])
     }
 
     @Test func refusesAModelWithAnotherProductID() async throws {
@@ -66,7 +66,7 @@ private func simulatedSession(timeout: Duration = .milliseconds(400),
     @Test func capabilitiesComeFromTheProfile() {
         let session = OPOv1Session(transport: MockTransport(), profile: DeviceRegistry.nordBuds3Pro)
         #expect(session.capabilities().contains(.noiseControl))
-        #expect(!session.capabilities().contains(.equalizer))
+        #expect(!session.capabilities().contains(.customEqualizer))
     }
 }
 

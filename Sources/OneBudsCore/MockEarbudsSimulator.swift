@@ -11,6 +11,15 @@ public actor MockEarbudsSimulator {
     private var equalizerPreset: UInt8 = 0
     private var features: [UInt8: UInt8]
     private var gestures: [GestureBinding]
+    private var cycleMask = 0b111
+    private var bassLevel = 2
+    private var ringing = false
+    private var customPresets: [CustomEQPreset] = [
+        CustomEQPreset(id: 4, name: "Night walk", bands: [62, 250, 1000, 4000, 8000, 16000].enumerated().map {
+            EQBand(frequency: $0.element, gain: [3, 2, 0, -1, 1, 2][$0.offset])
+        }),
+    ]
+    private var hearing: [UInt8]?
     /// When true, noise-control sets are refused with status 0x0E ("no bud in ear").
     public var refusesNoiseControl = false
 
@@ -29,7 +38,12 @@ public actor MockEarbudsSimulator {
                 bindings.append(GestureBinding(side: side, button: 1, action: action, function: function))
             }
         }
+        // The shared call group, for models that have call controls.
+        for (action, functions) in (profile.opo?.callFunctions ?? [:]).sorted(by: { $0.key < $1.key }) {
+            bindings.append(GestureBinding(side: GestureSide.both.rawValue, button: 6, action: action, function: functions.last ?? 0))
+        }
         gestures = bindings
+        if profile.opo?.customEQ == nil { customPresets = [] }
     }
 
     public func setRefusesNoiseControl(_ value: Bool) { refusesNoiseControl = value }
@@ -54,6 +68,37 @@ public actor MockEarbudsSimulator {
         return Data(OPOFrame(command: 0x0204, sequence: 0xFF, payload: [0x01, 0x02, 0x01, left, 0x02, right]).encoded())
     }
 
+    private func customPresetList() -> [UInt8] {
+        [0x00, UInt8(customPresets.count)] + customPresets.flatMap { preset -> [UInt8] in
+            let name = Array(preset.name.utf8)
+            return [preset.id == equalizerPreset ? 1 : 0, OPOFeatureCodec.byte(-6), 6, preset.id, UInt8(name.count)] + name
+                + [UInt8(preset.bands.count)]
+                + preset.bands.flatMap { [UInt8($0.frequency & 0xFF), UInt8($0.frequency >> 8), OPOFeatureCodec.byte($0.gain)] }
+        }
+    }
+
+    /// Applies a `0x0418` write; ids are renumbered after a create or delete, as on the earbuds.
+    private func applyCustomPreset(_ p: [UInt8]) -> [UInt8] {
+        guard p.count >= 6, let action = OPOFeatureCodec.PresetAction(rawValue: p[0]) else { return [0x01] }
+        let nameLength = Int(p[4])
+        guard p.count > 5 + nameLength else { return [0x01] }
+        let name = String(decoding: p[5..<(5 + nameLength)], as: UTF8.self)
+        let count = Int(p[5 + nameLength])
+        let body = Array(p[(6 + nameLength)...])
+        guard body.count == count * 3 else { return [0x01] }
+        let bands = (0..<count).map { EQBand(frequency: Int(body[$0 * 3]) | Int(body[$0 * 3 + 1]) << 8, gain: OPOFeatureCodec.signed(body[$0 * 3 + 2])) }
+        switch action {
+        case .create: customPresets.append(CustomEQPreset(id: 0, name: name, bands: bands))
+        case .save:
+            guard let index = customPresets.firstIndex(where: { $0.id == p[3] }) else { return [0x01] }
+            customPresets[index].name = name
+            customPresets[index].bands = bands
+        case .delete: customPresets.removeAll { $0.id == p[3] }
+        }
+        for index in customPresets.indices { customPresets[index].id = UInt8(4 + index) }
+        return [0x00]
+    }
+
     private func respond(to frame: OPOFrame) -> [OPOFrame] {
         func reply(_ payload: [UInt8]) -> OPOFrame {
             OPOFrame(command: frame.command | OPOCommand.replyBit, sequence: frame.sequence, payload: payload)
@@ -69,8 +114,13 @@ public actor MockEarbudsSimulator {
             return [reply([0x00, 0x03] + Array("1,2,151,2,2,151,3,2,105".utf8))]
         case OPOCommand.battery:
             return [reply([0x00, UInt8(batteries.count)] + batteries.flatMap { [$0.component, $0.raw] })]
+        case 0x010C where p.first == 0x02:
+            return [reply([0x00, 0x02, 0x01] + OPOFeatureCodec.minimalLE(cycleMask))]
         case 0x010C:
             return [reply([0x00, 0x01, 0x01, UInt8(noiseValue & 0xFF), UInt8(noiseValue >> 8)])]
+        case 0x0404 where p.first == 0x02:
+            cycleMask = OPOFeatureCodec.le(p.dropFirst(2))
+            return [reply([0x00])]
         case 0x0404:
             guard !refusesNoiseControl else { return [reply([0x0E])] }
             let mask = Array(p.dropFirst(2))
@@ -108,9 +158,39 @@ public actor MockEarbudsSimulator {
             }
             return [reply([0x00])]
         case 0x0200:
-            return [reply([0x00, 0x03, 0x01, 0x02, 0x03])]
+            // Offers a diagnostic id (≥ 0xF0) too, which a client must not subscribe to.
+            return [reply([0x00, 0x06, 0x01, 0x02, 0x03, 0x04, 0x08, 0xF1])]
         case 0x0205:
             return [reply([0x00])]
+        case 0x0109:
+            return [reply([0x00, 0x03, 0x01, 0x03, 0x02, 0x03, 0x03, 0x04])]
+        case 0x0122:
+            return [reply(customPresetList())]
+        case 0x0418:
+            return [reply(applyCustomPreset(p))]
+        case 0x0124:
+            return [reply([0x00, 0xFB, 0x05, OPOFeatureCodec.byte(bassLevel)])]
+        case 0x041B:
+            guard p.count == 3 else { return [reply([0x01])] }
+            bassLevel = OPOFeatureCodec.signed(p[2])
+            return [reply([0x00])]
+        case 0x0400:
+            ringing = p.first == 0x01
+            return [reply([0x00])]
+        case 0x0405 where p.first == 0x01:
+            // The result arrives as a push a moment after the acknowledgement.
+            return [reply([0x00]), OPOFrame(command: 0x0204, sequence: 0xFF, payload: [0x04, 0x01, 0x01, 0x02, 0x00])]
+        case 0x0405:
+            return [reply([0x00])]
+        case 0x040D, 0x0411:
+            return [reply([0x00])]
+        case 0x040E:
+            if p.count >= 42, p[0] == 0x03, p[1] == 0x0C { hearing = Array(p[1...]) }
+            return [reply([0x00])]
+        case 0x0116:
+            return [reply([0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x01])]
+        case 0x0115:
+            return [reply(hearing.map { [0x00, 0x03] + $0 } ?? [0x00, 0x00])]
         default:
             return [] // includes the host's 0x8500 time reply, which needs no answer
         }

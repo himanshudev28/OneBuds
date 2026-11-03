@@ -51,6 +51,10 @@ public actor OPOv1Session: EarbudProtocol {
     private var endReason: String?
     private var deviceInfo = DeviceInfo()
     private var packetLogging = false
+    /// Event ids the earbuds accepted a subscription for (fit-test results need `04`).
+    private var subscribedEvents: [UInt8] = []
+    private var fitWaiter: CheckedContinuation<FitResult, Error>?
+    private var fitAttempt = 0
 
     public init(transport: any EarbudTransport, profile: DeviceProfile) {
         self.init(transport: transport, profile: profile, replyTimeout: .milliseconds(2500), now: { Date() })
@@ -113,7 +117,7 @@ public actor OPOv1Session: EarbudProtocol {
         let count = Int(offered.payload[1])
         let ids = Array(offered.payload.dropFirst(2).prefix(count)).filter { $0 < 0xF0 }
         guard !ids.isEmpty else { return }
-        _ = try? await request(0x0205, payload: [UInt8(ids.count)] + ids)
+        if (try? await request(0x0205, payload: [UInt8(ids.count)] + ids)) != nil { subscribedEvents = ids }
     }
 
     // MARK: Commands
@@ -147,7 +151,13 @@ public actor OPOv1Session: EarbudProtocol {
             return .equalizer(presetID: try await readEqualizer())
 
         case .setEqualizer(let presetID):
-            guard parameters.equalizerPresets.contains(where: { $0.id == presetID }) else {
+            // Built-in presets come from the profile; custom ones must be on the earbuds right now.
+            let isBuiltIn = parameters.equalizerPresets.contains { $0.id == presetID }
+            var isCustom = false
+            if !isBuiltIn, parameters.customEQ != nil {
+                isCustom = try await readCustomPresets().contains { $0.id == presetID }
+            }
+            guard isBuiltIn || isCustom else {
                 throw ProtocolError.unsupported("EQ preset \(presetID)")
             }
             try await acknowledged(0x0406, payload: [presetID])
@@ -174,7 +184,9 @@ public actor OPOv1Session: EarbudProtocol {
 
         case .setGestures(let bindings):
             for binding in bindings {
-                guard parameters.gestureFunctions[binding.action]?.contains(binding.function) == true else {
+                // The call group (button 6, both earbuds) has its own, shorter list of functions.
+                let allowed = binding.button == 6 ? parameters.callFunctions[binding.action] : parameters.gestureFunctions[binding.action]
+                guard allowed?.contains(binding.function) == true, binding.button != 6 || binding.side == GestureSide.both.rawValue else {
                     throw ProtocolError.unsupported("\(parameters.functionName(binding.function)) for this gesture")
                 }
             }
@@ -194,7 +206,237 @@ public actor OPOv1Session: EarbudProtocol {
                 deviceInfo.firmware = DeviceInfo.parseFirmware(parsed.text)
             }
             return .deviceInfo(deviceInfo)
+
+        default:
+            return try await performFeature(command, parameters)
         }
+    }
+
+    /// Features beyond the basics. Each is refused unless the model's profile lists it.
+    private func performFeature(_ command: EarbudCommand, _ parameters: OPOParameters) async throws -> EarbudResponse {
+        switch command {
+        case .readWear:
+            let reply = try await request(0x0109)
+            guard let wear = OPOFeatureCodec.wear(reply.payload) else { throw ProtocolError.malformedReply(command: 0x0109) }
+            return .wear(wear)
+
+        case .readCustomEqualizers:
+            guard parameters.customEQ != nil else { throw ProtocolError.unsupported("custom EQ") }
+            return .customEqualizers(try await readCustomPresets())
+
+        case .createCustomEqualizer(let name, let bands):
+            guard let layout = parameters.customEQ else { throw ProtocolError.unsupported("custom EQ") }
+            let before = try await readCustomPresets()
+            guard before.count < layout.maximumPresets else { throw ProtocolError.unsupported("more than \(layout.maximumPresets) custom presets") }
+            guard let payload = OPOFeatureCodec.customPresetPayload(.create, id: 0, name: name, bands: bands, maximumGain: layout.maximumGain) else {
+                throw ProtocolError.unsupported("that preset")
+            }
+            try await acknowledged(0x0418, payload: payload)
+            // Ids may be renumbered after a create, so compare contents, not ids: exactly one more
+            // preset, and one more with this name and these gains.
+            func matching(_ list: [CustomEQPreset]) -> Int {
+                list.filter { $0.name == name && $0.bands.map(\.gain) == bands.map(\.gain) }.count
+            }
+            let after = try await readCustomPresets()
+            guard after.count == before.count + 1, matching(after) == matching(before) + 1 else {
+                throw ProtocolError.notApplied(expected: "a new preset named \(name)", actual: "no new preset")
+            }
+            return .customEqualizers(after)
+
+        case .saveCustomEqualizer(let preset):
+            guard let layout = parameters.customEQ else { throw ProtocolError.unsupported("custom EQ") }
+            try requireCustomID(preset.id, parameters)
+            // The id must still be the preset the user is editing (the phone may have renumbered them).
+            let current = try await readCustomPresets()
+            guard current.contains(where: { $0.id == preset.id && $0.bands.count == preset.bands.count }) else {
+                throw ProtocolError.notApplied(expected: "the preset you edited", actual: "a changed preset list; reopen it and try again")
+            }
+            guard let payload = OPOFeatureCodec.customPresetPayload(.save, id: preset.id, name: preset.name, bands: preset.bands, maximumGain: layout.maximumGain) else {
+                throw ProtocolError.unsupported("that preset")
+            }
+            try await acknowledged(0x0418, payload: payload)
+            let after = try await readCustomPresets()
+            guard after.contains(where: { $0.id == preset.id && $0.name == preset.name && $0.bands.map(\.gain) == preset.bands.map(\.gain) }) else {
+                throw ProtocolError.notApplied(expected: "the new curve", actual: "the previous curve")
+            }
+            return .customEqualizers(after)
+
+        case .deleteCustomEqualizer(let preset):
+            guard let layout = parameters.customEQ else { throw ProtocolError.unsupported("custom EQ") }
+            try requireCustomID(preset.id, parameters)
+            let before = try await readCustomPresets()
+            // Delete only if this id still holds the preset the user picked.
+            guard let target = before.first(where: { $0.id == preset.id }), target.name == preset.name else {
+                throw ProtocolError.notApplied(expected: preset.name, actual: "a changed preset list; reopen it and try again")
+            }
+            guard let payload = OPOFeatureCodec.customPresetPayload(.delete, id: preset.id, name: preset.name, bands: target.bands, maximumGain: layout.maximumGain) else {
+                throw ProtocolError.unsupported("that preset")
+            }
+            try await acknowledged(0x0418, payload: payload)
+            let after = try await readCustomPresets()
+            // Every other preset must survive (ids may shift, so compare names and curves).
+            func contents(_ list: [CustomEQPreset]) -> [String] { list.map { "\($0.name)|\($0.bands.map(\.gain))" }.sorted() }
+            var expected = contents(before)
+            if let index = expected.firstIndex(of: "\(target.name)|\(target.bands.map(\.gain))") { expected.remove(at: index) }
+            guard contents(after) == expected else {
+                throw ProtocolError.notApplied(expected: "\(preset.name) deleted", actual: "a different preset list")
+            }
+            return .customEqualizers(after)
+
+        case .readBassLevel:
+            guard parameters.bassLevels != nil else { throw ProtocolError.unsupported("BassWave strength") }
+            return .bassLevel(try await readBassLevel())
+
+        case .setBassLevel(let level):
+            guard let range = parameters.bassLevels, range.contains(level) else { throw ProtocolError.unsupported("BassWave strength \(level)") }
+            try await acknowledged(0x041B, payload: OPOFeatureCodec.bassPayload(level))
+            let actual = try await readBassLevel()
+            guard actual == level else { throw ProtocolError.notApplied(expected: "strength \(level)", actual: "strength \(actual)") }
+            return .bassLevel(actual)
+
+        case .readNoiseCycle:
+            guard !parameters.noiseCycleBits.isEmpty else { throw ProtocolError.unsupported("noise-control cycle") }
+            return .noiseCycle(try await readNoiseCycle(parameters))
+
+        case .setNoiseCycle(let categories):
+            guard let payload = OPOFeatureCodec.noiseCyclePayload(categories, bits: parameters.noiseCycleBits) else {
+                throw ProtocolError.unsupported("that noise-control cycle")
+            }
+            try await acknowledged(0x0404, payload: payload)
+            let actual = try await readNoiseCycle(parameters)
+            guard actual == categories else { throw ProtocolError.notApplied(expected: "the new cycle", actual: "the previous cycle") }
+            return .noiseCycle(actual)
+
+        case .findEarbuds(let ringing):
+            guard parameters.findsEarbuds else { throw ProtocolError.unsupported("find my earbuds") }
+            try await acknowledged(0x0400, payload: [ringing ? 0x01 : 0x00])
+            return .acknowledged
+
+        case .runFitTest:
+            guard parameters.runsFitTest else { throw ProtocolError.unsupported("fit test") }
+            guard subscribedEvents.contains(0x04) else { throw ProtocolError.unsupported("fit-test results (the earbuds did not accept the event)") }
+            return .fitResult(try await runFitTest())
+
+        case .readHearingProfile:
+            guard parameters.runsHearingTest else { throw ProtocolError.unsupported("Golden Sound") }
+            let reply = try await request(0x0115)
+            return .hearingProfile(OPOFeatureCodec.hearingProfile(reply.payload))
+
+        case .startHearingTest:
+            guard parameters.runsHearingTest else { throw ProtocolError.unsupported("Golden Sound") }
+            try await acknowledged(0x040D, payload: [0x02, 0x01])
+            return .acknowledged
+
+        case .playHearingTone(let tone):
+            guard parameters.runsHearingTest, let payload = OPOFeatureCodec.tonePayload(tone) else { throw ProtocolError.unsupported("that test tone") }
+            try await acknowledged(0x040E, payload: [0x04])
+            try await acknowledged(0x040E, payload: payload)
+            return .acknowledged
+
+        case .stopHearingTone:
+            guard parameters.runsHearingTest else { throw ProtocolError.unsupported("Golden Sound") }
+            try await acknowledged(0x040E, payload: [0x04])
+            return .acknowledged
+
+        case .endHearingTest:
+            guard parameters.runsHearingTest else { throw ProtocolError.unsupported("Golden Sound") }
+            try? await acknowledged(0x040E, payload: [0x04])
+            try await acknowledged(0x040D, payload: [0x02, 0x00])
+            return .acknowledged
+
+        case .applyHearingProfile(let levels):
+            guard parameters.runsHearingTest, let golden = parameters.goldenSoundFeatureID else { throw ProtocolError.unsupported("Golden Sound") }
+            guard levels.count == 12 else { throw ProtocolError.unsupported("a hearing result without 12 levels") }
+            return .hearingProfile(try await applyHearingProfile(levels.map(HearingTest.snap), golden: golden))
+
+        default:
+            throw ProtocolError.unsupported("this command")
+        }
+    }
+
+    private func readCustomPresets() async throws -> [CustomEQPreset] {
+        let reply = try await request(0x0122)
+        guard let presets = OPOFeatureCodec.customPresets(reply.payload) else { throw ProtocolError.malformedReply(command: 0x0122) }
+        return presets
+    }
+
+    /// Built-in preset ids can never be saved over or deleted.
+    private func requireCustomID(_ id: UInt8, _ parameters: OPOParameters) throws {
+        guard !parameters.equalizerPresets.contains(where: { $0.id == id }) else {
+            throw ProtocolError.unsupported("changing a built-in preset")
+        }
+    }
+
+    private func readBassLevel() async throws -> Int {
+        let reply = try await request(0x0124)
+        guard let level = OPOFeatureCodec.bassLevel(reply.payload) else { throw ProtocolError.malformedReply(command: 0x0124) }
+        return level
+    }
+
+    private func readNoiseCycle(_ parameters: OPOParameters) async throws -> Set<NoiseCategory> {
+        let reply = try await request(0x010C, payload: [0x02, 0x01])
+        guard let cycle = OPOFeatureCodec.noiseCycle(reply.payload, bits: parameters.noiseCycleBits) else {
+            throw ProtocolError.malformedReply(command: 0x010C)
+        }
+        return cycle
+    }
+
+    /// Starts the measurement, waits up to 15 s for the result push, and always stops it again.
+    private func runFitTest() async throws -> FitResult {
+        fitAttempt += 1
+        let attempt = fitAttempt
+        fitWaiter?.resume(throwing: ProtocolError.unsupported("a second fit test at the same time"))
+        fitWaiter = nil
+        do {
+            let result = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<FitResult, Error>) in
+                fitWaiter = continuation
+                Task {
+                    do {
+                        try await self.acknowledged(0x0405, payload: [0x01])
+                    } catch {
+                        await self.failFit(attempt: attempt, error) // hops onto the actor
+                    }
+                }
+                Task {
+                    try? await Task.sleep(for: .seconds(15))
+                    await self.failFit(attempt: attempt, ProtocolError.timeout(command: 0x0405))
+                }
+            }
+            try? await acknowledged(0x0405, payload: [0x00])
+            return result
+        } catch {
+            try? await acknowledged(0x0405, payload: [0x00])
+            throw error
+        }
+    }
+
+    private func failFit(attempt: Int, _ error: Error) {
+        guard attempt == fitAttempt, let waiter = fitWaiter else { return }
+        fitWaiter = nil
+        waiter.resume(throwing: error)
+    }
+
+    /// Golden Sound: read the filter (gives the enhance type), restore that type if needed, store the
+    /// profile and read it back, then turn the switch on and read that back (S4 section 20).
+    private func applyHearingProfile(_ values: [Int], golden: UInt8) async throws -> HearingProfile {
+        let uid = UInt32.random(in: 1...UInt32.max)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let name = formatter.string(from: now())
+        let filter = try await request(0x0116, payload: OPOFeatureCodec.hearingFilterPayload(uid: uid, values: values))
+        guard let type = OPOFeatureCodec.hearingEnhanceType(filter.payload) else { throw ProtocolError.malformedReply(command: 0x0116) }
+        if type > 0 { try await acknowledged(0x0411, payload: [0x01, 0x01, 0x01, 0x00, type]) }
+        try await acknowledged(0x040E, payload: OPOFeatureCodec.hearingRecordPayload(uid: uid, name: name, values: values))
+        let stored = OPOFeatureCodec.hearingProfile(try await request(0x0115).payload)
+        guard let stored, stored.uid == uid, stored.values == values else {
+            throw ProtocolError.notApplied(expected: "the new hearing profile", actual: "the previous one")
+        }
+        try await acknowledged(0x0403, payload: [golden, 0x01])
+        guard try await readFeatures([golden])[golden] == true else {
+            throw ProtocolError.notApplied(expected: "Golden Sound on", actual: "off")
+        }
+        return stored
     }
 
     private func readNoiseControl(_ parameters: OPOParameters) async throws -> NoiseControlMode {
@@ -406,11 +648,25 @@ public actor OPOv1Session: EarbudProtocol {
             var wear: [UInt8: UInt8] = [:]
             for index in 0..<Int(payload[1]) { wear[payload[2 + index * 2]] = payload[3 + index * 2] }
             eventContinuation.yield(.wear(wear))
+        case 0x03 where payload.count >= 4 && payload[1] == 0x02:
+            // 03 02 01 <mask LE>: the touch-and-hold cycle changed.
+            if let cycle = OPOFeatureCodec.noiseCycle([0x00] + payload.dropFirst(), bits: parameters.noiseCycleBits), !parameters.noiseCycleBits.isEmpty {
+                eventContinuation.yield(.noiseCycle(cycle))
+            }
         case 0x03:
             // 03 01 01 <LO> <HI>
             guard payload.count >= 4, payload[1] == 0x01 else { return }
             let value = Self.noiseValue(payload, at: 3)
             if let mode = noiseMode(forRead: value, parameters) { eventContinuation.yield(.noiseControl(mode)) }
+        case 0x04:
+            // 04 [<side> <status>]…: fit-test result. A push without any side is not a result.
+            let result = OPOFeatureCodec.fitResult(payload.dropFirst())
+            guard let waiter = fitWaiter, result.left != nil || result.right != nil else { return }
+            fitWaiter = nil
+            waiter.resume(returning: result)
+        case 0x08 where payload.count >= 3:
+            // 08 <kind> <status>: hearing-test progress.
+            eventContinuation.yield(.hearingStatus(payload[2]))
         case 0x05:
             if let id = parameters.gameModeFeatureID, payload.count >= 2 {
                 eventContinuation.yield(.feature(id: id, enabled: payload[1] != 0))
@@ -434,6 +690,8 @@ public actor OPOv1Session: EarbudProtocol {
         }
         for waiters in commandWaiters.values { waiters.forEach { $0.resume() } }
         commandWaiters = [:]
+        fitWaiter?.resume(throwing: ProtocolError.disconnected(finalReason))
+        fitWaiter = nil
         readers.forEach { $0.cancel() }
         eventContinuation.yield(.sessionEnded(reason: finalReason))
         eventContinuation.finish()
