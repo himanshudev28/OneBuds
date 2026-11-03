@@ -10,6 +10,7 @@ struct DetailView: View {
         case .noiseControl: NoiseControlView()
         case .equalizer: EqualizerView()
         case .gestures: GesturesView()
+        case .tools: ToolsView()
         case .deviceInfo: DeviceInfoView()
         case .compatibility: CompatibilityView()
         case .diagnostics: DiagnosticsView()

@@ -1,9 +1,11 @@
 import OneBudsCore
 import SwiftUI
 
-/// Coloured dot plus connection text; a native spinner replaces the dot while busy.
+/// Coloured dot plus connection text; a native spinner replaces the dot while busy. The text
+/// always names the state, so the dot's colour is never the only cue.
 struct ConnectionStatusLabel: View {
     @Environment(DeviceManager.self) private var manager
+    var font: Font = .caption
 
     private var color: Color {
         switch manager.connection {
@@ -15,7 +17,7 @@ struct ConnectionStatusLabel: View {
     }
 
     var body: some View {
-        HStack(spacing: Theme.Spacing.s - 3) {
+        HStack(spacing: Theme.Spacing.xsPlus) {
             if manager.connection.isBusy {
                 ProgressView().controlSize(.mini)
             } else {
@@ -28,7 +30,7 @@ struct ConnectionStatusLabel: View {
                 .lineLimit(1)
                 .truncationMode(.tail)
         }
-        .font(.caption)
+        .font(font)
         .foregroundStyle(.secondary)
     }
 }

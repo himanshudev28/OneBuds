@@ -18,6 +18,7 @@ struct MainWindow: View {
                 .toolbar { MainToolbar(manager: manager) }
                 .windowGlass()
         }
+        .environment(\.quietBadges, true)
         .onAppear(perform: AppActivationPolicy.enter)
         .onDisappear(perform: AppActivationPolicy.leave)
     }

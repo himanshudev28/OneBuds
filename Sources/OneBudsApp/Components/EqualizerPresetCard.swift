@@ -7,7 +7,16 @@ struct EqualizerPresetCard: View {
     let isSelected: Bool
     let isPending: Bool
     let action: () -> Void
+    @Environment(\.colorSchemeContrast) private var contrast
     @State private var isHovering = false
+    @FocusState private var isFocused: Bool
+
+    private var shape: RoundedRectangle { RoundedRectangle(cornerRadius: Theme.Radius.tile, style: .continuous) }
+
+    private var border: AnyShapeStyle {
+        if isSelected { return AnyShapeStyle(Color.accentColor.opacity(contrast == .increased ? 1 : 0.6)) }
+        return contrast == .increased ? AnyShapeStyle(.secondary) : AnyShapeStyle(Color.clear)
+    }
 
     private var fill: AnyShapeStyle {
         if isSelected { return AnyShapeStyle(Color.accentColor.opacity(0.12)) }
@@ -37,14 +46,16 @@ struct EqualizerPresetCard: View {
             }
             .padding(Theme.Spacing.m)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .surface(RoundedRectangle(cornerRadius: Theme.Radius.control + 2), standardFill: fill)
+            .surface(shape, standardFill: fill)
             .overlay {
-                RoundedRectangle(cornerRadius: Theme.Radius.control + 2)
-                    .strokeBorder(isSelected ? Color.accentColor.opacity(0.6) : .clear, lineWidth: 1)
+                shape.strokeBorder(border, lineWidth: Theme.Stroke.hairline)
             }
-            .contentShape(Rectangle())
+            .contentShape(shape)
+            .focusRing(shape, isFocused: isFocused)
         }
         .buttonStyle(.pressable)
+        .focused($isFocused)
+        .focusEffectDisabled()
         .onHover { isHovering = $0 }
         .animation(Theme.Motion.hover, value: isHovering)
         .accessibilityLabel(preset.name)

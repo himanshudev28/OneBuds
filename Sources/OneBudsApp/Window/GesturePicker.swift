@@ -8,7 +8,10 @@ struct GesturePicker: View {
     let binding: GestureBinding
     let accessibilityTitle: String
 
-    private var allowed: [UInt8] { manager.profile?.opo?.gestureFunctions[binding.action] ?? [] }
+    private var allowed: [UInt8] {
+        let opo = manager.profile?.opo
+        return (binding.button == 6 ? opo?.callFunctions[binding.action] : opo?.gestureFunctions[binding.action]) ?? []
+    }
     private var choices: [UInt8] { allowed.contains(binding.function) ? allowed : [binding.function] + allowed }
 
     var body: some View {
