@@ -10,3 +10,6 @@ Diagnostics/
 mac.md
 oneplus-buds3-controller-idea.md
 swift setup.md
+
+# Local code-knowledge graph (graphify): rebuilt on demand, not published.
+graphify-out/
