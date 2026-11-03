@@ -27,8 +27,9 @@ public enum DeviceRegistry {
         model: "OnePlus Buds 3 (E509A)",
         displayName: "OnePlus Buds 3",
         bluetoothNames: ["OnePlus Buds 3"],
-        // Both bearers are exposed (Observed, PhaseB-Report §4). RFCOMM is HeyMelody's SPP route.
-        transports: [.rfcomm, .ble],
+        // Both bearers are exposed and both passed the feature test (RFCOMM 2026-10-12, GATT
+        // 2026-11-03). GATT is tried first at the owner's request; RFCOMM is the fallback.
+        transports: [.ble, .rfcomm],
         rfcommServiceUUIDs: [opoService],
         ble: opoBLE,
         protocolKind: .opoV1,
@@ -51,12 +52,29 @@ public enum DeviceRegistry {
                 GestureAction.triple.rawValue: [0x03, 0x05, 0x06, 0x11, 0x00],
                 GestureAction.hold.rawValue: [0x08],
                 GestureAction.slide.rawValue: [0x07, 0x0A, 0x00],
-            ]),
+            ],
+            // Everything below is Experimental on Buds 3: the 0x8100 bitmap offers each command
+            // (bits 5, 8, 9, 19, 25, 34, 38; PhaseB-Report §6), and the layouts are S4's
+            // Buds 4 captures. None has been written to Buds 3 yet.
+            callFunctions: [GestureAction.double.rawValue: [0x00, 0x1D], GestureAction.longHold.rawValue: [0x00, 0x1C]],
+            smartVolumeFeatureID: 0x1C,
+            bassWaveFeatureID: 0x1D,
+            spatialAudioFeatureID: 0x1B,
+            goldenSoundFeatureID: 0x0B,
+            noiseCycleBits: [.off: 0, .noiseCancelling: 1, .transparency: 2],
+            customEQ: CustomEQLayout(frequencies: [62, 250, 1000, 4000, 8000, 16000], maximumGain: 6, maximumPresets: 3),
+            bassLevels: -5...5,
+            findsEarbuds: true,
+            runsFitTest: true,
+            runsHearingTest: true),
         status: .verified,
         capabilities: [
             .battery: .verified, .noiseControl: .verified, .equalizer: .verified,
             .gestures: .verified, .gameMode: .verified, .wearDetection: .experimental,
             .dualConnection: .experimental, .deviceInfo: .verified,
+            .customEqualizer: .experimental, .bassWave: .experimental, .spatialAudio: .experimental,
+            .smartVolume: .experimental, .noiseCycle: .experimental, .callControls: .experimental,
+            .findEarbuds: .experimental, .fitTest: .experimental, .hearingTest: .experimental,
         ],
         testedFirmware: ["127.127.101"],
         limitations: [
@@ -64,7 +82,7 @@ public enum DeviceRegistry {
             "In-ear detection: switch 0x04 toggles and is confirmed, but its effect is not yet confirmed (sources disagree on the id).",
             "Dual connection: read only so far; not toggled (switching it off could drop the Mac's link).",
             "No Adaptive mode in the vendor model list.",
-            "Custom EQ curves are not implemented.",
+            "Custom EQ, BassWave, 3D audio, smart volume, the noise-control cycle, call controls, find my earbuds, the fit test and Golden Sound are Experimental: the earbuds advertise them, but they have not been tested on Buds 3 yet.",
         ],
         sources: ["S4", "S5", "S7", "S10", "S11", "S12", "PhaseB-Report §4"],
         evidence: [
@@ -77,7 +95,11 @@ public enum DeviceRegistry {
             HardwareEvidence(date: "2026-10-12", firmware: "127.127.101",
                              what: "Feature test at the owner's request: 17/17 changes acknowledged and read back (noise Off/Transparency/ANC + Smart/Deep/Medium/Light, EQ 0-3, game mode, in-ear switch, left double-tap gesture), all restored; noise and EQ push events observed",
                              by: "owner-requested test"),
-        ])
+            HardwareEvidence(date: "2026-11-03", firmware: "127.127.101",
+                             what: "Same feature test over BLE GATT (0100/0200079A via retrieveConnectedPeripherals), owner-requested: 17/17 acknowledged and read back, all restored; read-only startup over GATT, Automatic and RFCOMM-only also OK",
+                             by: "owner-requested test"),
+        ],
+        verifiedTransports: [.rfcomm, .ble])
 
     public static let nordBuds3Pro = DeviceProfile(
         id: "oneplus-nord-buds-3-pro",
@@ -92,29 +114,36 @@ public enum DeviceRegistry {
         opo: OPOParameters(
             productIDs: ["064414"],
             noiseModes: ncTreeModes,
+            // EQ ids 3-5, switches and gestures: S4/S5 (Documentation/ModelCatalog/oneplus.json).
+            equalizerPresets: [EQPresetOption(id: 3, name: "Balanced"), EQPresetOption(id: 4, name: "Pure Vocals"),
+                               EQPresetOption(id: 5, name: "Deep Sea Bass")],
             featureStatusIDs: [0x05, 0x04, 0x0B, 0x0C, 0x11, 0x18, 0x06, 0x1B, 0x1D],
             gameModeFeatureID: 0x06,
-            wearDetectionFeatureID: 0x04),
+            wearDetectionFeatureID: 0x04,
+            dualConnectionFeatureID: 0x11,
+            gestureFunctions: [GestureAction.single.rawValue: [0x01, 0x00],
+                               GestureAction.double.rawValue: [0x03, 0x02, 0x01, 0x05, 0x06, 0x00, 0x11],
+                               GestureAction.triple.rawValue: [0x03, 0x02, 0x05, 0x06, 0x00, 0x11],
+                               GestureAction.longHold.rawValue: [0x0B, 0x0C, 0x00]],
+            bassWaveFeatureID: 0x1D,
+            spatialAudioFeatureID: 0x1B,
+            findsEarbuds: true,
+            runsFitTest: true),
         status: .experimental,
-        capabilities: [.battery: .experimental, .noiseControl: .experimental, .gameMode: .experimental,
-                       .wearDetection: .experimental, .deviceInfo: .experimental],
+        capabilities: [.battery: .experimental, .noiseControl: .experimental, .equalizer: .experimental,
+                       .gestures: .experimental, .gameMode: .experimental, .wearDetection: .experimental,
+                       .dualConnection: .experimental, .bassWave: .experimental, .spatialAudio: .experimental,
+                       .findEarbuds: .experimental, .fitTest: .experimental, .deviceInfo: .experimental],
         testedFirmware: [],
         limitations: [
             "Protocol reference model (S1, S2 tested it over BLE); not tested with OneBuds.",
             "Reported to offer only battery and wear events (S4 issue #2).",
+            "Needs the 0x0500 time reply or the link drops after 3-5 s (S4 issue #2); OneBuds sends it.",
+            "Noise level read-backs are assumed from the NC tree (verified on Buds 3, Pro 2 and Pro 3), not captured on this model.",
         ],
         sources: ["S1", "S2", "S3", "S4"],
         evidence: [])
 
-    /// Listed by references as likely compatible. Unknown: diagnostics only, no control session.
-    public static let unknownModels: [DeviceProfile] = [
-        unknown("oneplus-buds-4", .onePlus, "OnePlus Buds 4", productID: "065414", note: "Fully documented by S4 on its own hardware; not tested with OneBuds."),
-        unknown("oneplus-buds-pro-3", .onePlus, "OnePlus Buds Pro 3", productID: "064014", note: nil),
-        unknown("oneplus-buds-pro-2", .onePlus, "OnePlus Buds Pro 2", productID: "062014", note: nil),
-        unknown("oneplus-nord-buds-3", .onePlus, "OnePlus Nord Buds 3", productID: "065014",
-                note: "Uses older noise-control bits: the Buds 4 'Off' value turns ANC on here (S4)."),
-        unknown("oneplus-buds-pro", .onePlus, "OnePlus Buds Pro", productID: "060C14", note: "Uses the legacy 1107 service (S5)."),
-    ]
 
     static let standardSPP = "00001101-0000-1000-8000-00805F9B34FB"
 
@@ -133,7 +162,7 @@ public enum DeviceRegistry {
 
     static let realmeEQ: [EQPresetOption] = [
         EQPresetOption(id: 0, name: "Pure Raw"), EQPresetOption(id: 1, name: "Deep Bass"),
-        EQPresetOption(id: 2, name: "Pure Vocals"), EQPresetOption(id: 3, name: "Pure Bass"),
+        EQPresetOption(id: 2, name: "Pure Voice"), EQPresetOption(id: 3, name: "Pure Bass"),
     ]
 
     /// realme gesture masks from realme Link data (S4 models.json, S15): voice assistant is 0x04.
@@ -187,16 +216,14 @@ public enum DeviceRegistry {
         limitations: ["Uses realme's older realme Link protocol (protocolType 2), which no source documents. Needs an Android Bluetooth capture to add."],
         sources: ["S5", "S10"], evidence: [])
 
-    static let realmeUnknownModels: [DeviceProfile] = [
-        unknown("realme-buds-air-5-pro", .realme, "realme Buds Air 5 Pro", productID: "061C12", note: nil),
-        unknown("realme-buds-air-6", .realme, "realme Buds Air6", productID: "063412", note: nil),
-        unknown("realme-buds-air-6-pro", .realme, "realme Buds Air6 Pro", productID: "063012", note: "Gadgetbridge connects it over standard SPP (S15)."),
-        unknown("realme-buds-air-7-pro", .realme, "realme Buds Air7 Pro", productID: "064C12", note: "Owner-confirmed in QuickBuds (S4)."),
-        unknown("realme-buds-t310", .realme, "realme Buds T310", productID: "063C12", note: nil),
-    ]
 
+    /// Vendor GATT services of every known model (used to find already-connected BLE peripherals).
+    public static var bleServiceUUIDs: [String] { DeviceProfile.bleServiceUUIDs(in: all) }
+
+    /// Hand-written profiles (hardware-backed or owner-specific) first, then the generated catalogue
+    /// (DeviceCatalog.swift, from Documentation/ModelCatalog via scripts/generate-catalog.py).
     public static let all: [DeviceProfile] = [onePlusBuds3, nordBuds3Pro, realmeBudsAir5, realmeBudsT300]
-        + unknownModels + realmeUnknownModels + [realmeBudsWireless2]
+        + catalogControlProfiles + catalogOtherProfiles + [realmeBudsWireless2]
 
     /// Selects a profile by exact Bluetooth name first, then by product id. Never by family name.
     public static func match(name: String?, productID: String? = nil, in profiles: [DeviceProfile] = all) -> DeviceProfile? {
@@ -206,15 +233,18 @@ public enum DeviceRegistry {
                 return profile
             }
         }
+        // A product id shared by two models (OPPO Enco Buds2 reports realme Buds Q2s' 060C12) never
+        // selects a profile on its own.
         if let productID = productID?.uppercased() {
-            return profiles.first { $0.opo?.productIDs.contains(productID) == true }
+            let claims = profiles.filter { $0.opo?.productIDs.contains(productID) == true }
+            return claims.count == 1 ? claims[0] : nil
         }
         return nil
     }
 
-    private static func unknown(_ id: String, _ manufacturer: Manufacturer, _ name: String, productID: String, note: String?) -> DeviceProfile {
+    static func unknown(_ id: String, _ manufacturer: Manufacturer, _ name: String, productID: String, note: String?) -> DeviceProfile {
         DeviceProfile(id: id, manufacturer: manufacturer, model: name, displayName: name, bluetoothNames: [name],
-                      transports: [.rfcomm, .ble], rfcommServiceUUIDs: [opoService], ble: opoBLE, protocolKind: .opoV1,
+                      transports: [.ble, .rfcomm], rfcommServiceUUIDs: [opoService], ble: opoBLE, protocolKind: .opoV1,
                       opo: OPOParameters(productIDs: [productID]), status: .unknown, capabilities: [:], testedFirmware: [],
                       limitations: ["Listed as likely compatible by reference projects; untested. Diagnostics only."] + (note.map { [$0] } ?? []),
                       sources: ["S5"], evidence: [])

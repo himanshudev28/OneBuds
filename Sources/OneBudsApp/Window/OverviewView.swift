@@ -6,28 +6,17 @@ struct OverviewView: View {
 
     var body: some View {
         Form {
-            Section {
-                DeviceHeroCard()
-            }
-
             if manager.connection.isConnected {
-                if manager.presentation(.battery) != .hidden {
-                    Section {
-                        if let battery = manager.battery, !battery.isEmpty {
-                            BatteryRow(battery: battery, large: true)
-                                .padding(.vertical, Theme.Spacing.s)
-                        } else {
-                            Text("The earbuds haven't reported battery levels yet.")
-                                .foregroundStyle(.secondary)
-                        }
-                    } header: {
-                        SectionHeader(title: "Battery", presentation: manager.presentation(.battery))
-                    }
+                // Header sits on the window background rather than in a card.
+                Section {
+                    DeviceHeroCard()
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                 }
                 if manager.presentation(.noiseControl) != .hidden {
                     Section {
                         NoiseModeSelector(large: true)
-                            .padding(.vertical, Theme.Spacing.s - 2)
+                            .padding(.vertical, Theme.Spacing.s)
                     } header: {
                         SectionHeader(title: "Noise Control", presentation: manager.presentation(.noiseControl))
                     }
@@ -46,7 +35,7 @@ struct OverviewView: View {
         .overlay {
             if !manager.connection.isConnected {
                 ConnectionStateView()
-                    .padding(.top, 120)
+                    .padding(.top, 40)
             }
         }
         .animateState(value: manager.connection.isConnected)

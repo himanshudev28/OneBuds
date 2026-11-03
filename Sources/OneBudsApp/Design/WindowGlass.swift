@@ -10,6 +10,8 @@ struct WindowGlass: ViewModifier {
         if visualStyle == .glass && !reduceTransparency {
             content
                 .scrollContentBackground(.hidden)
+                // Content would scroll under a clear toolbar; give it a material.
+                .toolbarBackground(.visible, for: .windowToolbar)
                 .background(VisualEffectBackground(material: .underWindowBackground).ignoresSafeArea())
         } else {
             content

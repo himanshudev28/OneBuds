@@ -1,0 +1,6627 @@
+[
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air4s",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06F010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, hearingEnhancement, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R5",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06B450"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air5s（星光版）",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06E810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, bassEngineSupport, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, gameSoundList, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, voiceWake, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air5s",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06C810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, bassEngineSupport, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, gameSoundList, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, voiceWake, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Clip2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06E010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Energetic & Dynamic (modeType 34)",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Dynaudio Special (modeType 30)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, equalizer, findDevice, highToneQuality, multiDevicesConnect, spatialTypes, voiceWake, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air5",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06D810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, gameSoundList, hearingEnhancement, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air5 Pro",
+  "bluetoothNames": [
+   "OPPO Enco Air5 Pro"
+  ],
+  "productIDs": [
+   "06C410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": 6,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [
+   "55dB Active Noise Cancellation",
+   "Smart Scene Noise Cancellation (adapts to surroundings)",
+   "Sound Master EQ (multiple EQ settings)",
+   "Dual connection (phone + one other device)",
+   "OPPO Alive Audio spatial audio (no head tracking)",
+   "Immersive Gaming Scene (FPS spatial effects)",
+   "Slide Volume Control",
+   "Spotify Tap",
+   "HeyMelody app",
+   "Codecs LHDC 5.0/AAC/SBC",
+   "Bluetooth 6.0",
+   "IP55",
+   "Transparency mode (listed only in battery spec rows)"
+  ],
+  "officialSpecURL": "https://www.oppo.com/in/accessories/enco-air5-pro/ (and /specs/)",
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "transports": [
+    "S12 hardware (SDP name oppointeraction)",
+    "S5"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)",
+    "S12 DeviceProfile.swift + docs (hardware-tested)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)",
+    "S12 PROTOCOL.md (00 Supreme Original, 01 Powerful Bass, 02 Pure Vocals - matches S5 ids)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency",
+    "S12 (10 bands 31..16000 Hz, +-6 dB, firmware 158.158.105)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ],
+   "featureSwitchIDs.gameMode": [
+    "S12 PROTOCOL.md (feature id 06, hardware)"
+   ],
+   "officialFeatures": [
+    "https://www.oppo.com/in/accessories/enco-air5-pro/",
+    "https://www.oppo.com/in/accessories/enco-air5-pro/specs/"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "high",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, bassEngineSupport, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, gameSoundList, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, voiceWake, wearDetection; S12 hardware: battery L/R/case, placement 04 in-case/05 out, firmware reply, game mode id 06, custom EQ (22/01 list, 18/04 write). S12 read values 0008 off, 0100 transparency, 0010/0020/0040/0080 deep/medium/light/smart; set 01 off, 04 transparency, 02 ANC default, 10/20/40/80 levels. Official page (India) names ANC 55 dB, Smart Scene NC, Sound Master EQ, dual connection, Alive Audio spatial, slide volume, HeyMelody; transparency only appears in battery spec rows; game mode, wear detection, find not stated."
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Clip",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06B810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Default (modeType 35)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Energetic & Dynamic (modeType 34)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Deep Sea Bass (modeType 12)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, equalizer, multiDevicesConnect, spatialTypes, voiceWake, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X",
+  "bluetoothNames": null,
+  "productIDs": [
+   "061410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0001"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "0002"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Default (modeType 5)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Dynaudio Pure & Calm (modeType 6)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Dynaudio Warm & Soft (modeType 7)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ],
+    "longHold": [
+     "00",
+     "0D"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: dolbyAtmos, equalizer, findDevice, fitDetection, highToneQuality, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free",
+  "bluetoothNames": null,
+  "productIDs": [
+   "060410"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "01",
+     "03"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos, findDevice"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "062010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "other:modeType6",
+    "setBytes": "08",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Airy (modeType 4)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, fitDetection, hearingEnhancement, multiDevicesConnect, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Play",
+  "bluetoothNames": null,
+  "productIDs": [
+   "061C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "S5 function flags present: dolbyAtmos, findDevice"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air",
+  "bluetoothNames": null,
+  "productIDs": [
+   "061810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "S5 function flags present: dolbyAtmos, findDevice"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds",
+  "bluetoothNames": null,
+  "productIDs": [
+   "062410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air Lite",
+  "bluetoothNames": null,
+  "productIDs": [
+   "062810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco W51",
+  "bluetoothNames": null,
+  "productIDs": [
+   "060C10"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "08",
+     "01",
+     "05",
+     "06",
+     "03"
+    ],
+    "triple": [
+     "00",
+     "03"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos, findDevice, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco W31",
+  "bluetoothNames": null,
+  "productIDs": [
+   "060810"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco W11",
+  "bluetoothNames": null,
+  "productIDs": [
+   "061010"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "protocol:\"no-SPP-per-catalogue\" (S5/S10 supportSpp=false; no source says whether it speaks OPO) - mark Unsupported; Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO O-Free",
+  "bluetoothNames": null,
+  "productIDs": [
+   "060412"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "protocol:\"no-SPP-per-catalogue\" (S5/S10 supportSpp=false; no source says whether it speaks OPO) - mark Unsupported; type N (neckband per catalogue type code; type code meaning not stated by source); Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 lists no advanced function flags"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco W31 Lite",
+  "bluetoothNames": null,
+  "productIDs": [
+   "062C10"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "protocol:\"no-SPP-per-catalogue\" (S5/S10 supportSpp=false; no source says whether it speaks OPO) - mark Unsupported; Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco M31",
+  "bluetoothNames": null,
+  "productIDs": [
+   "050410"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "type N (neckband per catalogue type code; type code meaning not stated by source); Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Quiet",
+  "bluetoothNames": null,
+  "productIDs": [
+   "050010"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "protocol:\"no-SPP-per-catalogue\" (S5/S10 supportSpp=false; no source says whether it speaks OPO) - mark Unsupported; type N (neckband per catalogue type code; type code meaning not stated by source); Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air3",
+  "bluetoothNames": null,
+  "productIDs": [
+   "064C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air3 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "065C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Call Quality (modeType 20)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highAudio, highToneQuality, multiDevicesConnect, spatialTypes, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "065810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Rich Vocals (modeType 21)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free3",
+  "bluetoothNames": null,
+  "productIDs": [
+   "066010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Call Quality (modeType 20)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highAudio, highToneQuality, multiDevicesConnect, spatialTypes, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco M32",
+  "bluetoothNames": null,
+  "productIDs": [
+   "050810"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "protocol:\"no-SPP-per-catalogue\" (S5/S10 supportSpp=false; no source says whether it speaks OPO) - mark Unsupported; type N (neckband per catalogue type code; type code meaning not stated by source); S5 function flags present: dolbyAtmos"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R",
+  "bluetoothNames": null,
+  "productIDs": [
+   "063010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Airy (modeType 4)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "063410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free2i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "064010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "other:modeType6",
+    "setBytes": "08",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Airy (modeType 4)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, fitDetection, multiDevicesConnect, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "063C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Dynaudio Pure Original (modeType 9)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Dynaudio Pure & Calm (modeType 6)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Dynaudio Dynamic & Lively (modeType 8)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Joe Hisaishi Master Tuning (modeType 10)",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Enco X Nostalgic Classic (modeType 16)",
+    "minFirmware": 112
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highAudio, highToneQuality, multiDevicesConnect, voiceWake, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air2 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "063810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "other:modeType6",
+    "setBytes": "08",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C",
+     "0D"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air2i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "064410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, equalizer"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds2",
+  "bluetoothNames": null,
+  "productIDs": [
+   "064810",
+   "060C12"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [
+   "AI Deep Noise Cancellation for Calls (no ANC stated)",
+   "Enco Live Stereo Sound Effects (Bass Boost, Clear Vocals)",
+   "Simple Touch Control: single, double, triple tap and touch-and-hold",
+   "Game Mode, 94ms end-to-end latency (OPPO phones)",
+   "Double-tap to control camera",
+   "HeyMelody app (not supported on iOS per page)",
+   "Bluetooth 5.2, codecs AAC/SBC",
+   "IPX4",
+   "Up to 28 h listening time",
+   "Dual connection not stated; wear detection not stated; find not stated"
+  ],
+  "officialSpecURL": "https://www.oppo.com/en/accessories/oppo-enco-buds2/ and https://oppo.com/my/accessories/oppo-enco-buds2/specs",
+  "sources": {
+   "productIDs": [
+    "S5/S10 (064810)",
+    "S4 docs/PROTOCOL.md 21.1 + github.com/spizganed/QuickBuds issue #5 (060C12, [CAPTURE])"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "transports": [
+    "S5 uuid 079A supportSpp true",
+    "S4 capture: handshake, product id and 0200 answered over RFCOMM (OPOv1)"
+   ],
+   "featureSwitchIDs.gameMode": [
+    "S4 PROTOCOL.md: Enco Buds2 statusQuery \"05 06\" [TESTED] (06 = game mode / low latency)",
+    "official oppo.com English page: Game Mode, 94ms end-to-end latency"
+   ],
+   "noiseModes": [
+    "S5: no noiseReductionMode for Enco Buds2",
+    "official page: only \"AI Deep Noise Cancellation for Calls\", no ANC"
+   ],
+   "officialFeatures": [
+    "https://www.oppo.com/en/accessories/oppo-enco-buds2/ and https://oppo.com/my/accessories/oppo-enco-buds2/specs"
+   ]
+  },
+  "conflicts": [
+   "productIDs: S5/S10 list Enco Buds2 = 064810, but S4 issue #5 capture from a real Enco Buds2 reports product id 060C12 (the realme Buds Q2s id in S5). Match by Bluetooth name first, then id (S4 states HeyMelody does name-before-id).",
+   "eqPresets labels: S5 (Balanced (Default)/Deep Sea Bass/Bright & Crisp) vs S10 (Classic/Dynamic bass/Clear vocals) vs official (Bass Boost, Clear Vocals)"
+  ],
+  "confidence": "medium",
+  "notes": "OWNER HARDWARE. Speaks OPOv1 over 079A per S4 capture (issue #5): handshake reply 8100 bitmap \"00 9B 2C 50 80\" (4-byte bitmap), 0x8200 offered events \"02 01\" only (wear, battery), sends no 0x8205 ack, no 0x0500 time request seen. DANGER: a long 0x010D feature query (23 ids) or burst of queries (010D,0106,0109,0105,010F) froze the buds ~6 s then dropped the link; \"02 05 0D\" / \"05 06\" status lists kept the link up (S4 [CAPTURE]/[TESTED]). Queries should be sent one at a time (no bit 56 batch 0x012F). EQ ids 0/1/2 = modeType 1/2/3 (S5 label Balanced (Default) / Deep Sea Bass / Bright & Crisp; S10 labels Classic / Dynamic bass / Clear vocals); official page says Bass Boost and Clear Vocals. No ANC/transparency per S5 and official page. S5 gesture masks: single 516, double 8805, triple 8801, hold 536 (decoded above via S10 table). Not stated by sources: wear detection id on this model, find, custom EQ. S5 flags: equalizer=2, clickTakePic, batteryInfo, fastDiscovery, related. Firmware min 4001250 / podsVersion 3007250 (S5)."
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "065010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "other:modeType6",
+    "setBytes": "08",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Mellow Rich Sound (modeType 18)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C",
+     "0D"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air2（新声版）",
+  "bluetoothNames": null,
+  "productIDs": [
+   "066C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air3i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "067010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco M33",
+  "bluetoothNames": null,
+  "productIDs": [
+   "050C10"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 13)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "type N (neckband per catalogue type code; type code meaning not stated by source); Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: bassEngineSupport, dolbyAtmos, equalizer, findDevice, fitDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X3i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "066810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp (modeType 13)",
+    "minFirmware": 119
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, bassEngineSupport, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X3",
+  "bluetoothNames": null,
+  "productIDs": [
+   "067410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "HD Resolution (modeType 27)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Dynaudio Special (modeType 30)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, gameSoundList, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, wearDetection, zenMode"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air3s",
+  "bluetoothNames": null,
+  "productIDs": [
+   "067810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds2 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "068010"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 11)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bright & Crisp (modeType 13)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Deep Sea Bass (modeType 12)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0D"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "Older-model service UUID 00001107 (S4: \"never connects on Buds 4; kept for other models\"); no source gives its command set for this model; S5 function flags present: clickTakePic, dolbyAtmos, equalizer, findDevice"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air 3i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "068810"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, equalizer"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R3",
+  "bluetoothNames": null,
+  "productIDs": [
+   "068410"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Reno Special (Purple Galaxy) (modeType 25)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: clickTakePic, dolbyAtmos, equalizer, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air4 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "067C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air4",
+  "bluetoothNames": null,
+  "productIDs": [
+   "069010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, hearingEnhancement, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R3 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "069C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Galaxy Solo (modeType 33)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds3 Pro+",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06A010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0004"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) (modeType 1)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass (modeType 2)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp (modeType 3)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "S5 function flags present: autoSwitchLink, clickTakePic, dolbyAtmos, earScan, equalizer, findDevice, hearingEnhancement, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free4",
+  "bluetoothNames": [
+   "OPPO Enco Free4"
+  ],
+  "productIDs": [
+   "068C10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "adaptive",
+    "setBytes": "00 08",
+    "readValue": "0800"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Energetic & Dynamic (modeType 34)",
+    "minFirmware": 118
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "transports": [
+    "S12 hardware (SDP name oppointeraction)",
+    "S5"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)",
+    "S12 DeviceProfile.swift + docs (hardware-tested)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "high",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, wearDetection; S12 hardware (RFCOMM reports): read values off 0008, transparency 0100, deep 0010, medium 0020, light 0040, smart 0080, adaptive 0800 (adaptive write not verified; S5 index 11 mask would be 00 08). S12 does not adapt EQ/game/wear/battery-query for Free4 (not tested). No official oppo.com Free4 page found (search returned none, /in/accessories/enco-free4/ is 404); third-party coverage only (not recorded as official)."
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Free4（丹拿版）",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06C010"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "adaptive",
+    "setBytes": "00 08",
+    "readValue": "0800"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Dynaudio Special (modeType 30)",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Energetic & Dynamic (modeType 34)",
+    "minFirmware": 118
+   },
+   {
+    "id": 8,
+    "name": "Dynaudio Vocals (modeType 40)",
+    "minFirmware": 136
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: aiTranslate, autoSwitchLink, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X3s",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06BC10"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null,
+    "note": "parent ANC bit; S12 uses it as default ANC set; S5 says parent code is not used (rebounds)"
+   },
+   {
+    "mode": "adaptive",
+    "setBytes": "00 08",
+    "readValue": "0800"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Supreme Original (modeType 26)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals Enjoy (modeType 28)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Powerful Bass (modeType 29)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Dynaudio Special (modeType 30)",
+    "minFirmware": null
+   },
+   {
+    "id": 8,
+    "name": "Dynaudio Vocals (modeType 40)",
+    "minFirmware": 136
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "slide": [
+     "00",
+     "07",
+     "0A"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "noiseModes": [
+    "S5 whiteList noiseReductionMode (protocolIndex; set = 1<<index per S5 BuildNoisePayload; read = 1<<child index)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ],
+   "featureSwitchIDs.wearDetection": [
+    "S5 wearDetection flag + S4 rule (model with wearDetection 1/2 has id 04 in statusQuery); not hardware-tested for this model"
+   ]
+  },
+  "conflicts": [
+   "noiseModes.off setBytes: S12 (hardware) and S5 comment say 01 01 01; S5 code path would send first child bit (01 01 08). Use 01."
+  ],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: aiTranslate, clickTakePic, customEqualizer, dolbyAtmos, earScan, equalizer, findDevice, fitDetection, hearingEnhancement, highToneQuality, multiDevicesConnect, spatialTypes, strongNoiseReductionRealTime, wearDetection"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds3 Pro",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06A850"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: clickTakePic, customEqualizer, dolbyAtmos, equalizer, findDevice, gameSoundList, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air4i",
+  "bluetoothNames": null,
+  "productIDs": [
+   "069850"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: clickTakePic, customEqualizer, dolbyAtmos, equalizer, findDevice, gameSoundList, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco R4",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06AC50"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": {
+   "bands": null,
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ],
+   "customEQ": [
+    "S5 customEqualizer/customEqFrequency"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "customEqualizer=1 but no band list in S5; S12 documents the 10-band list only for Air5 Pro; S5 function flags present: clickTakePic, customEqualizer, dolbyAtmos, equalizer, findDevice, gameSoundList, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds3",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06A450"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Air4（新声版）",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06B050"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Original (modeType 22)",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Melodious Vocals (modeType 32)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pulse Bass (modeType 31)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01"
+    ],
+    "double": [
+     "00",
+     "01",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "05",
+     "06",
+     "03",
+     "11"
+    ],
+    "longHold": [
+     "00",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "None",
+    "0x01": "Play/pause",
+    "0x03": "Voice assistant",
+    "0x05": "Previous",
+    "0x06": "Next",
+    "0x07": "Volume",
+    "0x08": "Noise control",
+    "0x0A": "Switch track",
+    "0x0B": "Volume up",
+    "0x0C": "Volume down",
+    "0x0D": "Switch device",
+    "0x11": "Game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S5 DeviceModels.json whiteList",
+    "S10 heymelody-devices.json (derived from S5, not independent)"
+   ],
+   "eqPresets": [
+    "S5 whiteList equalizerMode* + EqModeNames.en.json (S10 uses different label text)"
+   ],
+   "gestures": [
+    "S5 control[].support masks decoded with S10 gesture.ts flag->code table (single detailed source; 4/5 prev/next code scheme model dependent)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 function flags present: aiTranslate, clickTakePic, dolbyAtmos, equalizer, findDevice, multiDevicesConnect, spatialTypes"
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco X4",
+  "bluetoothNames": null,
+  "productIDs": [
+   "06EC10"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [
+   "AI Real-time Adaptive ANC (adaptive mode, three levels)",
+   "Conversation Awareness -> Transparency Mode",
+   "More Transparency option",
+   "10-band adjustable Sound Master EQ",
+   "Dual connection to 2 cross-ecosystem devices",
+   "Cross-ecosystem Spatial Audio with head tracking",
+   "LHDC lossless",
+   "Bluetooth 6.1",
+   "HeyMelody app (Android 8+/iOS 13.2+); Wireless Earphones app on ColorOS 12+",
+   "Game mode not stated"
+  ],
+  "officialSpecURL": "https://www.oppo.com/en/accessories/enco-x4/",
+  "sources": {
+   "productIDs": [
+    "S4 docs/PROTOCOL.md 21.2 (Enco X4 06EC10, [VENDOR]; wearDetection 2)"
+   ],
+   "officialFeatures": [
+    "https://www.oppo.com/en/accessories/enco-x4/"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Features known, protocol values missing (not in S5/S10 137-model catalogue; product id from S4 vendor list only; no noise bits, EQ ids or transport in any source read)."
+ },
+ {
+  "brand": "OPPO",
+  "model": "OPPO Enco Buds3s",
+  "bluetoothNames": null,
+  "productIDs": null,
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": null,
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": "https://www.oppo.com/en/accessories/enco-buds3s/",
+  "sources": {
+   "existence": [
+    "https://www.oppo.com/en/audio/"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Listed on oppo.com global audio page; not in S5/S10; no protocol values; official feature list not fetched."
+ }
+]

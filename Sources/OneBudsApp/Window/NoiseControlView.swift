@@ -33,6 +33,7 @@ struct NoiseControlView: View {
                         } icon: {
                             Image(systemName: category.symbolName)
                                 .foregroundStyle(manager.noiseControl?.category == category ? Color.accentColor : .secondary)
+                                .frame(width: Theme.Size.rowIcon)
                         }
                     }
                     LabeledContent("Reported by the earbuds", value: manager.noiseControl?.displayName ?? "Not reported")

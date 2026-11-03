@@ -13,16 +13,31 @@ enum Snapshotter {
 
     static func run(model: AppModel, to directory: URL) async {
         try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        model.systemVolume.start()
         await model.manager.useConnector(DemoConnector())
         _ = await waitUntil(timeout: .seconds(10)) { model.manager.connection.isConnected && model.manager.battery != nil }
 
         for appearance in [NSAppearance.Name.aqua, .darkAqua] {
             let suffix = appearance == .aqua ? "light" : "dark"
-            await render(PopoverView(), model: model, width: 320, height: nil, name: "popover-\(suffix)", appearance: appearance, in: directory)
+            await render(PopoverView(), model: model, width: Theme.Size.popoverWidth, height: nil, name: "popover-\(suffix)", appearance: appearance, in: directory)
+            for page in PopoverPage.allCases {
+                await render(PopoverPageView(page: page) {}.padding(Theme.Spacing.m + 2).frame(width: Theme.Size.popoverWidth),
+                             model: model, width: Theme.Size.popoverWidth, height: nil, name: "popover-page-\(page.rawValue)-\(suffix)",
+                             appearance: appearance, in: directory)
+            }
             for item in SidebarItem.allCases {
                 model.selection = item
                 await render(MainWindow(), model: model, width: 820, height: 600, name: "window-\(item.rawValue)-\(suffix)", appearance: appearance, in: directory)
             }
+        }
+        if let layout = model.manager.profile?.opo?.customEQ {
+            for appearance in [NSAppearance.Name.aqua, .darkAqua] {
+                await render(CustomPresetEditor(mode: model.manager.customPresets.first.map { .edit($0) } ?? .new, layout: layout,
+                                                existing: model.manager.customPresets),
+                             model: model, width: 460, height: nil, name: "sheet-eq-editor-\(appearance == .aqua ? "light" : "dark")",
+                             appearance: appearance, in: directory)
+            }
+            await render(HearingTestView(), model: model, width: 440, height: nil, name: "sheet-hearing-intro", appearance: .aqua, in: directory)
         }
         // Connection card: live levels, the first read still running, and a model without battery.
         let presentation = ConnectionCardPresenter.Presentation(modelName: model.manager.profile?.displayName ?? "Earbuds", deviceName: nil,
@@ -57,6 +72,21 @@ enum Snapshotter {
             await render(ConnectionCard(modelName: "OnePlus Buds 3", connection: .connected, battery: .levels(partial), artwork: artwork),
                          model: model, width: Theme.Size.cardWidth, height: nil, name: "card-artwork-\(name)", appearance: .aqua, in: directory)
         }
+
+        // Battery slots: a missing level, low and charging levels, and the first read still running.
+        let mixed = BatteryStatus(left: .init(percent: 9, isCharging: false), right: .init(percent: 27, isCharging: true))
+        for appearance in [NSAppearance.Name.aqua, .darkAqua] {
+            let suffix = appearance == .aqua ? "light" : "dark"
+            await render(VStack(spacing: Theme.Spacing.xl) {
+                BatteryRow(battery: mixed, size: .large)
+                BatteryRow(battery: mixed)
+                BatteryRow(waitingWith: .regular)
+            }.padding(Theme.Spacing.l), model: model, width: 420, height: nil, name: "battery-states-\(suffix)", appearance: appearance, in: directory)
+        }
+        // Overview at the narrowest useful and a wide window: rows must neither clip nor sprawl.
+        model.selection = .overview
+        await render(MainWindow(), model: model, width: 700, height: 640, name: "window-overview-narrow", appearance: .aqua, in: directory)
+        await render(MainWindow(), model: model, width: 1280, height: 720, name: "window-overview-wide", appearance: .darkAqua, in: directory)
 
         model.settings.visualStyle = .glass
         for appearance in [NSAppearance.Name.aqua, .darkAqua] {

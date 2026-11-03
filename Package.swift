@@ -31,7 +31,10 @@ let package = Package(
         .executableTarget(
             name: "OneBudsApp",
             dependencies: ["OneBudsBluetooth", "OneBudsCore", "OneBudsDiagnostics"],
-            linkerSettings: [.linkedFramework("ServiceManagement"), .linkedFramework("AppKit")]
+            linkerSettings: [
+                .linkedFramework("ServiceManagement"), .linkedFramework("AppKit"), .linkedFramework("CoreAudio"),
+                .linkedFramework("AudioToolbox"), .linkedFramework("UserNotifications"),
+            ]
         ),
 
         // Phase B diagnostic tool. Packaged as an .app bundle by scripts/build-probe.sh so macOS

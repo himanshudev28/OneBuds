@@ -11,7 +11,9 @@ import OneBudsProtocol
 
     @Test func neverMatchesByFamilyName() {
         #expect(DeviceRegistry.match(name: "OnePlus Buds 3 Pro") == nil)
-        #expect(DeviceRegistry.match(name: "OnePlus Buds") == nil)
+        // Brand or family names never match; "OnePlus Buds" is a real model of its own (2020).
+        for family in ["OnePlus", "OPPO Enco", "realme Buds", "Enco"] { #expect(DeviceRegistry.match(name: family) == nil) }
+        #expect(DeviceRegistry.match(name: "OnePlus Buds")?.id == "oneplus-buds")
     }
 
     @Test func fallsBackToProductID() {
@@ -20,9 +22,10 @@ import OneBudsProtocol
     }
 
     @Test func unknownModelsAreDiagnosticsOnly() throws {
-        let buds4 = try #require(DeviceRegistry.match(name: "OnePlus Buds 4"))
-        #expect(!buds4.allowsControlSession)
-        #expect(Capability.allCases.allSatisfy { buds4.presentation($0) == .hidden })
+        // Legacy 1107 service: handshake not implemented, so diagnostics only.
+        let budsPro = try #require(DeviceRegistry.match(name: "OnePlus Buds Pro"))
+        #expect(!budsPro.allowsControlSession)
+        #expect(Capability.allCases.allSatisfy { budsPro.presentation($0) == .hidden })
     }
 
     @Test func nothingIsClaimedVerifiedWithoutEvidence() {
@@ -47,7 +50,7 @@ import OneBudsProtocol
     }
 
     @Test func profileWithoutACapabilityHidesIt() {
-        #expect(DeviceRegistry.nordBuds3Pro.presentation(.equalizer) == .hidden)
+        #expect(DeviceRegistry.nordBuds3Pro.presentation(.customEqualizer) == .hidden)
         #expect(DeviceRegistry.onePlusBuds3.presentation(.equalizer) == .supported)
         #expect(DeviceRegistry.onePlusBuds3.presentation(.wearDetection) == .experimental)
     }
@@ -119,6 +122,13 @@ final class ScriptedConnector: DeviceConnector {
 
     func describe(_ transport: any EarbudTransport) -> String? { "scripted \(transport.kind.rawValue)" }
     func deviceChanges() -> AsyncStream<Void> { AsyncStream { _ in } }
+    /// Routes `isRouteAvailable` reports as usable right now.
+    var availableRoutes: Set<TransportKind> = []
+    private(set) var routeChecks = 0
+    func isRouteAvailable(_ kind: TransportKind, for earbuds: DiscoveredEarbuds) -> Bool {
+        routeChecks += 1
+        return availableRoutes.contains(kind)
+    }
 }
 
 @MainActor
@@ -129,7 +139,9 @@ final class ScriptedConnector: DeviceConnector {
         let manager = DeviceManager(connector: ScriptedConnector(found: [buds3]), reconnectDelays: [])
         await manager.connect()
         #expect(manager.connection == .connected)
-        #expect(manager.transportKind == .rfcomm)
+        #expect(manager.transportKind == .ble) // GATT first (owner's choice, 2026-11-03)
+        #expect(manager.transportAttempts == [TransportAttempt(kind: .ble, outcome: .connected)])
+        #expect(manager.fallbackNote == nil)
         #expect(manager.battery?.left?.percent == 82)
         #expect(manager.noiseControl == .noiseCancelling(.smart))
         #expect(manager.deviceInfo?.productID == "063C14")
@@ -137,20 +149,241 @@ final class ScriptedConnector: DeviceConnector {
         #expect(!manager.gestures.isEmpty)
     }
 
-    @Test func fallsBackToBLEWhenRFCOMMFails() async {
+    @Test func fallsBackToRFCOMMWhenGATTFails() async {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        await manager.connect()
+        #expect(connector.attempted == [.ble, .rfcomm])
+        #expect(manager.transportKind == .rfcomm)
+        #expect(manager.connection == .connected)
+        #expect(manager.transportAttempts.map(\.kind) == [.ble, .rfcomm])
+        #expect(manager.transportAttempts.last?.outcome == .connected)
+        #expect(manager.fallbackNote?.hasSuffix("using RFCOMM") == true)
+        #expect(manager.fallbackNote?.hasPrefix("GATT: ") == true)
+    }
+
+    @Test func rfcommFailureDoesNotMatterWhenGATTWorks() async {
         let connector = ScriptedConnector(found: [buds3], failingKinds: [.rfcomm])
         let manager = DeviceManager(connector: connector, reconnectDelays: [])
         await manager.connect()
-        #expect(connector.attempted == [.rfcomm, .ble])
+        #expect(connector.attempted == [.ble])
         #expect(manager.transportKind == .ble)
         #expect(manager.connection == .connected)
     }
 
+    @Test func bothRoutesFailingNamesEachOne() async {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble, .rfcomm])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        await manager.connect()
+        #expect(connector.attempted == [.ble, .rfcomm])
+        guard case .failed(let message) = manager.connection else { Issue.record("expected failure"); return }
+        #expect(message.contains("GATT: "))
+        #expect(message.contains("RFCOMM: "))
+        #expect(manager.transportKind == nil)
+        #expect(manager.transportAttempts.count == 2)
+    }
+
     @Test func transportOrderFollowsTheProfile() {
         let bleOnly = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["scan"], transports: [.ble])
-        #expect(DeviceManager.transportOrder(profile: DeviceRegistry.onePlusBuds3, earbuds: buds3) == [.rfcomm, .ble])
-        #expect(DeviceManager.transportOrder(profile: DeviceRegistry.onePlusBuds3, earbuds: bleOnly) == [.ble])
+        let classicOnly = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["paired"], transports: [.rfcomm])
+        let buds3Profile = DeviceRegistry.onePlusBuds3
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: buds3) == [.ble, .rfcomm])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: bleOnly) == [.ble])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: classicOnly) == [.rfcomm])
         #expect(DeviceManager.transportOrder(profile: DeviceRegistry.nordBuds3Pro, earbuds: buds3) == [.ble, .rfcomm])
+        // A model without GATT parameters never gets GATT, even if discovery saw a BLE peripheral.
+        #expect(DeviceManager.transportOrder(profile: DeviceRegistry.realmeBudsAir5, earbuds: buds3) == [.rfcomm])
+    }
+
+    @Test func transportOrderHonoursThePreference() {
+        let buds3Profile = DeviceRegistry.onePlusBuds3
+        let classicOnly = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["paired"], transports: [.rfcomm])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: buds3, preference: .rfcommOnly) == [.rfcomm])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: buds3, preference: .bleOnly) == [.ble])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: classicOnly, preference: .bleOnly) == [])
+        let demo = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["demo"], transports: [.mock], isDemo: true)
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: demo, preference: .rfcommOnly) == [.mock])
+    }
+
+    @Test func lastGoodRouteOnlyReorders() {
+        let buds3Profile = DeviceRegistry.onePlusBuds3
+        let classicOnly = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["paired"], transports: [.rfcomm])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: buds3, lastGood: .rfcomm) == [.rfcomm, .ble])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: classicOnly, lastGood: .ble) == [.rfcomm])
+        #expect(DeviceManager.transportOrder(profile: buds3Profile, earbuds: buds3, preference: .bleOnly, lastGood: .rfcomm) == [.ble])
+    }
+
+    @Test func noAllowedRouteSendsNothingAndSaysWhy() async {
+        let classicOnly = DiscoveredEarbuds(name: "OnePlus Buds 3", discoveryPaths: ["paired"], transports: [.rfcomm])
+        let connector = ScriptedConnector(found: [classicOnly])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        manager.transportPreference = .bleOnly
+        await manager.connect()
+        #expect(connector.attempted.isEmpty)
+        guard case .failed(let message) = manager.connection else { Issue.record("expected failure"); return }
+        #expect(message.contains("Connection setting"))
+    }
+
+    @Test func automaticReconnectTriesTheLastGoodRouteFirst() async {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        await manager.connect()
+        #expect(manager.transportKind == .rfcomm)
+        await manager.disconnect()
+        await manager.connect(thorough: false) // automatic reconnect
+        #expect(connector.attempted == [.ble, .rfcomm, .rfcomm])
+        #expect(manager.fallbackNote == nil)
+        await manager.disconnect()
+        await manager.connect() // user-initiated: full order again, GATT first
+        #expect(connector.attempted == [.ble, .rfcomm, .rfcomm, .ble, .rfcomm])
+    }
+
+    @Test func fallbackMemoryExpires() async {
+        final class Clock: @unchecked Sendable { var date = Date(timeIntervalSince1970: 1_000_000) }
+        let clock = Clock()
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [], now: { clock.date })
+        await manager.connect()
+        await manager.disconnect()
+        clock.date += DeviceManager.fallbackMemory - 1
+        await manager.connect(thorough: false)
+        #expect(connector.attempted == [.ble, .rfcomm, .rfcomm]) // still remembered
+        await manager.disconnect()
+        clock.date += DeviceManager.fallbackMemory + 1
+        connector.failingKinds = []
+        await manager.connect(thorough: false)
+        #expect(connector.attempted == [.ble, .rfcomm, .rfcomm, .ble]) // expired: GATT first again
+        #expect(manager.transportKind == .ble)
+    }
+
+    // MARK: Switching back to GATT
+
+    private func fallbackManager(_ connector: ScriptedConnector) -> DeviceManager {
+        DeviceManager(connector: connector, reconnectDelays: [], routeCheckInterval: .milliseconds(20))
+    }
+
+    @Test func switchesBackToGATTWhenItIsAvailableAgain() async throws {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = fallbackManager(connector)
+        await manager.connect()
+        #expect(manager.transportKind == .rfcomm)
+        connector.failingKinds = []
+        connector.availableRoutes = [.ble]
+        for _ in 0..<100 where manager.transportKind != .ble || manager.isSwitchingRoute { try await Task.sleep(for: .milliseconds(20)) }
+        #expect(manager.transportKind == .ble)
+        #expect(manager.connection == .connected)
+        #expect(connector.attempted == [.ble, .rfcomm, .ble])
+        #expect(manager.transportAttempts == [TransportAttempt(kind: .ble, outcome: .connected)])
+        #expect(manager.fallbackNote == nil)
+        #expect(!manager.isSwitchingRoute)
+        #expect(manager.battery != nil) // re-read over the new route
+        await manager.disconnect()
+    }
+
+    @Test func failedSwitchReturnsToRFCOMMAndBacksOff() async throws {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = fallbackManager(connector)
+        await manager.connect()
+        connector.availableRoutes = [.ble] // visible, but opening it still fails
+        for _ in 0..<100 where connector.attempted.count < 4 { try await Task.sleep(for: .milliseconds(20)) }
+        #expect(connector.attempted == [.ble, .rfcomm, .ble, .rfcomm])
+        for _ in 0..<50 where manager.isSwitchingRoute { try await Task.sleep(for: .milliseconds(20)) }
+        #expect(manager.transportKind == .rfcomm)
+        #expect(manager.connection == .connected)
+        try await Task.sleep(for: .milliseconds(200))
+        #expect(connector.attempted.count == 4) // backing off (10 min) before the next try
+        await manager.disconnect()
+    }
+
+    @Test func staysOnRFCOMMWhileGATTIsNotAvailable() async throws {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = fallbackManager(connector)
+        await manager.connect()
+        connector.failingKinds = []
+        try await Task.sleep(for: .milliseconds(200))
+        #expect(connector.routeChecks > 0)
+        #expect(connector.attempted == [.ble, .rfcomm])
+        #expect(manager.transportKind == .rfcomm)
+        await manager.disconnect()
+    }
+
+    @Test func neverSwitchesWhileTheEarbudsAreRinging() async throws {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = fallbackManager(connector)
+        await manager.connect()
+        await manager.findEarbuds(ringing: true)
+        #expect(manager.isRinging)
+        connector.failingKinds = []
+        connector.availableRoutes = [.ble]
+        try await Task.sleep(for: .milliseconds(200))
+        #expect(manager.transportKind == .rfcomm)
+        await manager.findEarbuds(ringing: false)
+        for _ in 0..<100 where manager.transportKind != .ble || manager.isSwitchingRoute { try await Task.sleep(for: .milliseconds(20)) }
+        #expect(manager.transportKind == .ble)
+        await manager.disconnect()
+    }
+
+    @Test func noSwitchBackUnderRFCOMMOnly() async throws {
+        let connector = ScriptedConnector(found: [buds3])
+        let manager = fallbackManager(connector)
+        manager.transportPreference = .rfcommOnly
+        await manager.connect()
+        connector.availableRoutes = [.ble]
+        try await Task.sleep(for: .milliseconds(150))
+        #expect(connector.routeChecks == 0)
+        #expect(connector.attempted == [.rfcomm])
+        await manager.disconnect()
+    }
+
+    @Test func changingThePreferenceForgetsTheLastGoodRoute() async {
+        let connector = ScriptedConnector(found: [buds3], failingKinds: [.ble])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        await manager.connect()
+        await manager.disconnect()
+        manager.transportPreference = .rfcommOnly
+        manager.transportPreference = .automatic
+        connector.failingKinds = []
+        await manager.connect(thorough: false)
+        #expect(connector.attempted == [.ble, .rfcomm, .ble])
+        #expect(manager.transportKind == .ble)
+    }
+
+    @Test func buds3IsVerifiedOnBothRoutes() async {
+        let overGATT = DeviceManager(connector: ScriptedConnector(found: [buds3]), reconnectDelays: [])
+        await overGATT.connect()
+        #expect(overGATT.transportKind == .ble)
+        #expect(overGATT.presentation(.battery) == .supported)
+        #expect(overGATT.presentation(.noiseControl) == .supported)
+        #expect(overGATT.presentation(.fitTest) != .supported) // Experimental stays Experimental
+
+        let overRFCOMM = DeviceManager(connector: ScriptedConnector(found: [buds3]), reconnectDelays: [])
+        overRFCOMM.transportPreference = .rfcommOnly
+        await overRFCOMM.connect()
+        #expect(overRFCOMM.transportKind == .rfcomm)
+        #expect(overRFCOMM.presentation(.battery) == .supported)
+        #expect(overRFCOMM.presentation(.noiseControl) == .supported)
+    }
+
+    @Test func profileSupportPerTransport() {
+        #expect(DeviceRegistry.onePlusBuds3.verifiedTransports == [.rfcomm, .ble])
+        var profile = DeviceRegistry.onePlusBuds3
+        profile.verifiedTransports = [.rfcomm] // as before the GATT test
+        #expect(profile.support(.battery, over: .rfcomm) == .verified)
+        #expect(profile.support(.battery, over: .ble) == .experimental)
+        #expect(profile.support(.battery, over: .mock) == .verified) // Demo mirrors the profile
+        #expect(profile.support(.battery, over: nil) == .verified)
+        #expect(profile.support(.fitTest, over: .rfcomm) == .experimental) // never upgraded
+        #expect(DeviceRegistry.realmeBudsAir5.support(.battery, over: .rfcomm) == .experimental)
+        // Nothing may claim Verified over a route without evidence for it.
+        for profile in DeviceRegistry.all where profile.capabilities.values.contains(.verified) {
+            #expect(!profile.verifiedTransports.isEmpty, "\(profile.id) has Verified capabilities but no verified transport")
+        }
+    }
+
+    @Test func bleServiceListComesFromTheProfiles() {
+        let services = DeviceRegistry.bleServiceUUIDs
+        #expect(services == [DeviceRegistry.opoService.uppercased()])
+        #expect(!services.contains { $0.hasPrefix("00001107") }) // legacy RFCOMM UUID, not a GATT service
     }
 
     @Test func settingIsShownOnlyAfterConfirmation() async {
@@ -193,11 +426,36 @@ final class ScriptedConnector: DeviceConnector {
         #expect(manager.lastError == "Disconnected: case closed")
     }
 
-    @Test func unknownModelGetsNoSession() async {
+    @Test func reportedProductIDPicksTheRightProfile() async {
+        // Named like Buds 4, but the earbuds report Buds 3's product id (as a special edition would).
         let connector = ScriptedConnector(found: [DiscoveredEarbuds(name: "OnePlus Buds 4", discoveryPaths: ["test"], transports: [.rfcomm])])
         let manager = DeviceManager(connector: connector, reconnectDelays: [])
         await manager.connect()
-        #expect(manager.connection == .unrecognised(name: "OnePlus Buds 4"))
+        #expect(manager.connection == .connected)
+        #expect(manager.profile?.id == "oneplus-buds-3")
+        #expect(manager.earbuds?.productID == "063C14")
+        #expect(connector.attempted == [.rfcomm, .rfcomm]) // retried once on the same route, nothing else
+        #expect(manager.fallbackNote == nil) // a profile switch is not a route fallback
+        #expect(manager.transportAttempts == [TransportAttempt(kind: .rfcomm, outcome: .connected)])
+        await manager.disconnect()
+        await manager.connect() // remembered: no second mismatch
+        #expect(manager.profile?.id == "oneplus-buds-3")
+        #expect(connector.attempted.count == 3)
+        await manager.disconnect()
+    }
+
+    @Test func unknownOrSharedProductIDStillStops() async {
+        // A product id no profile claims (or two claim) never switches profiles.
+        #expect(DeviceRegistry.match(name: nil, productID: "060C12") == nil) // Enco Buds2 and realme Buds Q2s
+        #expect(DeviceRegistry.match(name: nil, productID: "FFFFFF") == nil)
+    }
+
+    @Test func unknownModelGetsNoSession() async {
+        // Legacy 1107 service: recognised, diagnostics only.
+        let connector = ScriptedConnector(found: [DiscoveredEarbuds(name: "OnePlus Buds Pro", discoveryPaths: ["test"], transports: [.rfcomm])])
+        let manager = DeviceManager(connector: connector, reconnectDelays: [])
+        await manager.connect()
+        #expect(manager.connection == .unrecognised(name: "OnePlus Buds Pro"))
         #expect(connector.attempted.isEmpty)
     }
 

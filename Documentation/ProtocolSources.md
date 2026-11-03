@@ -39,6 +39,10 @@ Commit SHAs pin the exact revision that was read.
 | S13 | [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) | **GPL-3.0**, © 2021 Tim Schneeberger | `master` @ `754b6fdfb1c151b022cece775c8aaad4eb185afa` (2026-10-01) | **Read only.** Architecture ideas and IOBluetooth pitfalls. |
 | S14 | [vedatkilic/galaxy-buds-mac](https://github.com/vedatkilic/galaxy-buds-mac) (Swift 6, IOBluetooth RFCOMM) | **MIT**, "Copyright (c) 2026 Vedat Kılıç" | `main` @ `3ffedf8217695075188ac4a6b1d0664022f58d92` (2026-09-06) | **Reusable with attribution.** Release notes record macOS lessons. |
 | S15 | Gadgetbridge ([codeberg.org/Freeyourgadget/Gadgetbridge](https://codeberg.org/Freeyourgadget/Gadgetbridge)) OPPO/realme support and its BT reverse-engineering guide (now at gadgetbridge.org/internals/development/bluetooth/) | **AGPL-3.0** | `master` @ `862ec6cb4ed40dbb484a2655de64b91444f43773` (2026-10-11) | **Read only.** Facts and the capture procedure. It has no OnePlus models. |
+| S16 | [eggmasonvalue/realme-unlink](https://github.com/eggmasonvalue/realme-unlink), hardware-tested on realme Buds Wireless 5 ANC (`051412`) | **No licence file** | `08f29eb` (read 2026-11-03) | **Read only.** Facts only (noise values, EQ ids, custom EQ id 4). |
+| S17 | [GazzasaurusRex/oneplus-buds-omarchy](https://github.com/GazzasaurusRex/oneplus-buds-omarchy), hardware-tested on OnePlus Buds Pro (fw 541.541.510) and Buds Pro 2 (fw 196.196.101) | MIT (as reported by the research pass; recheck before reusing code) | read 2026-11-03 | Facts only so far (Pro 2 noise tree, legacy 1107 handshake). |
+| S18 | OP-Buds-4-PC-Controls (independent OnePlus Buds 4 measurements, incl. Adaptive `0x0800`) | Not checked | read 2026-11-03 | Facts only. |
+| S19 | [GewoonJaap/oneplus-buds-macos](https://github.com/GewoonJaap/oneplus-buds-macos) and nic0manz/oneplus_buds3_pro_python (OnePlus Buds Pro 3) | Not checked | read 2026-11-03 | Facts only (Pro 3 noise masks, spatial `0x0422`). |
 
 ### Credits
 

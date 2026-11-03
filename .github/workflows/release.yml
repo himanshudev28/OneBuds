@@ -1,0 +1,79 @@
+name: Release
+
+# Push a version tag to test, build and publish the downloads:
+#   git tag v0.2.0 && git push origin v0.2.0
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  mac:
+    name: Build OneBuds (macOS)
+    # Swift tools 6.0 needs Xcode 16. Apple Silicon runner.
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      # The Liquid Glass path is behind `#if compiler(>=6.2)` and has never been compiled, so build
+      # with the newest Xcode 16 rather than whatever the image defaults to.
+      - name: Select Xcode 16
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_16*.app | sort -V | tail -1)"
+          sudo xcode-select -s "$XCODE"
+          swift --version
+
+      - name: Check the model catalogue is generated from its data
+        run: python3 scripts/generate-catalog.py --check
+
+      # The app shows the version from Info.plist; stamp the tag's so the two never disagree.
+      - name: Stamp the version from the tag
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          plutil -replace CFBundleShortVersionString -string "$VERSION" Packaging/OneBuds-Info.plist
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Test
+        run: swift test
+
+      # No signing certificate in CI: the app is signed ad-hoc (scripts/signing-common.sh falls back
+      # to it). Local builds keep using the stable "OneBuds Local Signing" identity.
+      - name: Build the app
+        run: scripts/build-app.sh
+
+      - name: Package the DMG and a zipped .app
+        run: |
+          scripts/make-dmg.sh "$VERSION"
+          cp "build/OneBuds-$VERSION.dmg" "$GITHUB_WORKSPACE/"
+          ditto -c -k --keepParent build/OneBuds.app "$GITHUB_WORKSPACE/OneBuds-$VERSION-mac.zip"
+
+      # Release notes come from CHANGELOG.md; a tag without a section gets a short generic body.
+      - name: Extract release notes for this tag
+        id: notes
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          BODY=$(awk -v tag="## $TAG" '
+            index($0, tag) == 1 { found = 1; next }
+            found && /^## v/ { exit }
+            found { print }
+          ' CHANGELOG.md)
+          if [ -z "$(echo "$BODY" | tr -d '[:space:]')" ]; then
+            echo "::warning::No '## $TAG' section in CHANGELOG.md; using a generic body."
+            BODY="OneBuds $TAG for macOS 14 or later."
+          fi
+          {
+            echo "body<<CHANGELOG_EOF"
+            echo "$BODY"
+            echo "CHANGELOG_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Publish the release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: OneBuds ${{ github.ref_name }}
+          body: ${{ steps.notes.outputs.body }}
+          files: |
+            OneBuds-${{ env.VERSION }}.dmg
+            OneBuds-${{ env.VERSION }}-mac.zip

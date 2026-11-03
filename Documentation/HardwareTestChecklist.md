@@ -37,6 +37,22 @@ Before you start:
 - [ ] Game mode, in-ear detection and dual connection: switch each one and switch it back. Each change is confirmed. Check that the behaviour actually changes (for example, in-ear detection pauses music when you take a bud out).
 - [ ] Touch Gestures: change Left → Double tap to **Play / pause**. It is confirmed, and double tap now plays and pauses. Restore it to **Next track**.
 
+## New features (Experimental until checked here)
+
+Each one is read back from the earbuds before it shows as done. Note anything that is acknowledged but doesn't sound or behave right.
+
+- [ ] Popover: the four tiles open their pages with a slide, and Back (or <kbd>Esc</kbd>) returns.
+- [ ] Popover volume slider moves the Mac's volume, and follows the keyboard volume keys.
+- [ ] Battery rings say "in ear" / "in case" correctly as you move the buds.
+- [ ] **Sound → Custom Presets:** New Preset, change a few faders, Save. It appears in the list and you hear it. Edit it, then Delete it.
+- [ ] **BassWave:** turn it on, move Strength to +5 and to −5, then turn it off. Each is confirmed and audible.
+- [ ] **3D audio** and **Smart volume:** on, then off. Each is confirmed.
+- [ ] **Controls → Noise-Control Cycle:** untick Off. Touch-and-hold now skips Off. Tick it again.
+- [ ] **Tools → Find My Earbuds** (buds out of your ears!): Play, then Stop.
+- [ ] **Tools → Fit Test** with both buds in: you get a result for each side within 15 s.
+- [ ] **Tools → Golden Sound:** run the hearing test, Save to Earbuds, and check Golden Sound shows on.
+- [ ] Settings → General → **Low-battery alerts**: allow notifications when asked. (To test without waiting for a flat battery, set the threshold to 30% when a bud is at or below it.)
+
 ## Phone competition (hypothesis from mac.md §7)
 
 - [ ] Phone Bluetooth **on**, HeyMelody **open**: does OneBuds still connect and control? Change a mode in HeyMelody: does OneBuds follow?
@@ -60,4 +76,6 @@ Before you start:
 |---|---|---|---|---|
 | 2026-10-12 | 127.127.101 | Connect + read all (app self-test) | Observed: all reads OK over RFCOMM ch 15 | First run: buds in the open case (100/100/100, Off). Second run: buds worn (L/R 100, ANC Smart). Done by Claude with owner approval; values not yet confirmed by the owner. |
 | 2026-10-12 | 127.127.101 | Feature test (owner-requested) | **17/17 PASS**, all restored | Noise: all 7 modes. EQ: presets 1/2/3 and back to 0. Game mode and in-ear switch: on/off. Left double-tap gesture: changed and restored. Pushes: 9 noise, 4 EQ. Dual connection skipped at the owner's request. |
+| 2026-11-03 | 127.127.101 | Feature test over **BLE GATT** (owner-requested, `ONEBUDS_TRANSPORT=bleOnly`) | **17/17 PASS**, all restored | Same steps as the RFCOMM run. GATT `0100`/`0200079A` found via `retrieveConnectedPeripherals`; connect + reads in 3.0 s (RFCOMM: 1.2 s). Read-only startup also passed in Automatic (picked GATT) and RFCOMM-only modes. |
+| 2026-11-03 | 127.127.101 | Switch back RFCOMM → GATT (`ONEBUDS_ROUTESWITCHTEST_OUT`, read-only) | **PASS** in 2.7 s | Connected over RFCOMM, preference set to Automatic, manager switched to GATT and re-read battery/noise/EQ with identical values. Reviewed GATT code re-checked: GATT-only 3.4 s, Automatic 2.8 s (picked GATT). |
 | 2026-10-12 | 127.127.101 | Owner check of the redesigned UI (popover, Settings, menu shortcuts, gestures) | Owner reported "everything working" | Latest build installed to /Applications at 12:37. |

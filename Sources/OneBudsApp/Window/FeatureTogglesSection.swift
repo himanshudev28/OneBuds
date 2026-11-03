@@ -19,6 +19,7 @@ struct FeatureTogglesSection: View {
             (.gameMode, opo.gameModeFeatureID, "gamecontroller"),
             (.wearDetection, opo.wearDetectionFeatureID, "ear"),
             (.dualConnection, opo.dualConnectionFeatureID, "laptopcomputer.and.iphone"),
+            (.smartVolume, opo.smartVolumeFeatureID, "speaker.badge.exclamationmark"),
         ]
         return candidates.compactMap { capability, id, symbol in
             guard let id, manager.presentation(capability) != .hidden, manager.features[id] != nil else { return nil }

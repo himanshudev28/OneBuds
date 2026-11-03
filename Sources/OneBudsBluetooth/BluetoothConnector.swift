@@ -64,12 +64,13 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
             found[name] = entry
         }
 
-        // 1. BLE peripherals already connected to the Mac.
+        // 1. BLE peripherals already connected to the Mac that expose a known vendor GATT service
+        //    (the service list comes from the device profiles). This is what marks GATT as offered.
         if let central, centralState == .poweredOn {
-            let services = [DeviceRegistry.opoService, "00001107-D102-11E1-9B23-00025B00A5A5"].map { CBUUID(string: $0) }
+            let services = DeviceRegistry.bleServiceUUIDs.map { CBUUID(string: $0) }
             for peripheral in central.retrieveConnectedPeripherals(withServices: services) {
                 guard let name = peripheral.name, Self.isCandidate(name) else { continue }
-                add(name, path: "BLE connected peripheral", transport: .ble)
+                add(name, path: "BLE connected peripheral (vendor GATT service)", transport: .ble)
             }
         }
 
@@ -79,6 +80,13 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
             guard device.isConnected(), let name = device.name, Self.isCandidate(name) else { continue }
             let cached = device.addressString.flatMap { knownProductIDs[Self.addressKey($0)] }
             add(name, path: "paired classic device", transport: .rfcomm, productID: cached)
+            // Cached SDP records only (no traffic): note whether a control service is already known.
+            if let profile = DeviceRegistry.match(name: name, productID: cached), !profile.rfcommServiceUUIDs.isEmpty {
+                let cachedRecord = profile.rfcommServiceUUIDs.contains { uuid in
+                    ClassicInspector.sdpUUID(uuid).flatMap { device.getServiceRecord(for: $0) } != nil
+                }
+                found[name]?.discoveryPaths.append(cachedRecord ? "RFCOMM control service in SDP cache" : "RFCOMM service not cached yet (checked on connect)")
+            }
             watchDisconnect(of: device)
             if DeviceRegistry.match(name: name, productID: cached) == nil, let address = device.addressString {
                 unidentified.append((name, address))
@@ -108,6 +116,9 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
             }
         }
 
+        Self.mergeRenamedBLEEntries(&found)
+        if thorough { Self.offerGATTByAdvertisement(&found) }
+
         // Prefer models with a profile, then those allowing a control session.
         return found.values.sorted { lhs, rhs in
             let l = lhs.profile.map { $0.allowsControlSession ? 0 : 1 } ?? 2
@@ -118,14 +129,17 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
 
     public func makeTransport(for earbuds: DiscoveredEarbuds, kind: TransportKind) -> (any EarbudTransport)? {
         guard let profile = earbuds.profile else { return nil }
+        let classicDevice = (IOBluetoothDevice.pairedDevices() ?? []).compactMap { $0 as? IOBluetoothDevice }
+            .first { $0.name == earbuds.name && $0.isConnected() }
         switch kind {
         case .rfcomm:
-            guard let device = (IOBluetoothDevice.pairedDevices() ?? []).compactMap({ $0 as? IOBluetoothDevice })
-                .first(where: { $0.name == earbuds.name && $0.isConnected() }) else { return nil }
-            return RFCOMMTransport(device: device, serviceUUIDs: profile.rfcommServiceUUIDs.isEmpty ? [DeviceRegistry.opoService] : profile.rfcommServiceUUIDs)
+            // Only the profile's own SDP services; nothing is guessed for a model without them.
+            guard let classicDevice, !profile.rfcommServiceUUIDs.isEmpty else { return nil }
+            return RFCOMMTransport(device: classicDevice, serviceUUIDs: profile.rfcommServiceUUIDs)
         case .ble:
             guard let ble = profile.ble else { return nil }
-            return BLETransport(target: .init(name: earbuds.name, serviceUUID: ble.serviceUUID, writeUUID: ble.writeUUID, notifyUUID: ble.notifyUUID))
+            return BLETransport(target: .init(names: [earbuds.name] + earbuds.bleNames, serviceUUID: ble.serviceUUID, writeUUID: ble.writeUUID,
+                                              notifyUUID: ble.notifyUUID, classicAddress: classicDevice?.addressString))
         case .mock:
             return nil
         }
@@ -133,8 +147,27 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
 
     public func describe(_ transport: any EarbudTransport) -> String? {
         if let rfcomm = transport as? RFCOMMTransport { return rfcomm.channelDescription }
-        if let ble = transport as? BLETransport { return ble.discoveryPath.map { "GATT 0x079A via \($0)" } }
+        if let ble = transport as? BLETransport { return ble.channelDescription }
         return nil
+    }
+
+    public func isRouteAvailable(_ kind: TransportKind, for earbuds: DiscoveredEarbuds) -> Bool {
+        guard let profile = earbuds.profile else { return false }
+        switch kind {
+        case .ble:
+            // A BLE link to this Mac exposing the model's vendor service. Renamed devices use the
+            // model name over BLE, hence the profile's names too.
+            guard let central, centralState == .poweredOn, let ble = profile.ble else { return false }
+            let names = Set([earbuds.name] + earbuds.bleNames + profile.bluetoothNames)
+            return central.retrieveConnectedPeripherals(withServices: [CBUUID(string: ble.serviceUUID)])
+                .contains { $0.name.map(names.contains) == true }
+        case .rfcomm:
+            guard !profile.rfcommServiceUUIDs.isEmpty else { return false }
+            return (IOBluetoothDevice.pairedDevices() ?? []).compactMap { $0 as? IOBluetoothDevice }
+                .contains { $0.name == earbuds.name && $0.isConnected() }
+        case .mock:
+            return false
+        }
     }
 
     public func deviceChanges() -> AsyncStream<Void> {
@@ -148,6 +181,40 @@ public final class BluetoothConnector: NSObject, DeviceConnector {
     }
 
     // MARK: Helpers
+
+    /// For a classic-connected device whose model has a GATT route that discovery did not see (the
+    /// Mac holds no BLE link to it), still offer GATT on user-initiated connects. BLETransport then
+    /// scans and accepts only an advertisement carrying this device's classic address; if none
+    /// appears, the connect falls through to RFCOMM. Automatic reconnects skip this (no scanning).
+    nonisolated static func offerGATTByAdvertisement(_ found: inout [String: DiscoveredEarbuds]) {
+        for (name, entry) in found where entry.transports.contains(.rfcomm) && !entry.transports.contains(.ble) {
+            guard let profile = entry.profile, profile.ble != nil, profile.transports.contains(.ble) else { continue }
+            found[name]?.transports.append(.ble)
+            found[name]?.discoveryPaths.append("GATT not seen yet (checked on connect by this device's advertisement)")
+        }
+    }
+
+    /// A renamed classic device ("Alex's OnePlus Buds 3") still advertises the model name over BLE,
+    /// so its GATT route shows up as a separate entry. Folds a BLE-only entry into the classic entry
+    /// of the same model, but only when that pairing is unambiguous: exactly one classic entry and
+    /// one BLE-only entry resolve to that profile. Core Bluetooth exposes no addresses (PhaseB L1),
+    /// so anything less certain is left as found.
+    nonisolated static func mergeRenamedBLEEntries(_ found: inout [String: DiscoveredEarbuds]) {
+        let byProfile = Dictionary(grouping: found.values.filter { $0.profile != nil }) { $0.profile!.id }
+        for (_, entries) in byProfile {
+            let classic = entries.filter { $0.transports.contains(.rfcomm) }
+            let bleOnly = entries.filter { $0.transports == [.ble] }
+            guard classic.count == 1, bleOnly.count == 1, !classic[0].transports.contains(.ble), classic[0].bleNames.isEmpty,
+                  var merged = found[classic[0].name] else { continue }
+            let ble = bleOnly[0]
+            merged.transports.append(.ble)
+            merged.bleNames.append(ble.name)
+            merged.discoveryPaths += ble.discoveryPaths.map { "\($0), same model as the classic device" }
+            merged.productID = merged.productID ?? ble.productID
+            found[classic[0].name] = merged
+            found[ble.name] = nil
+        }
+    }
 
     /// Registry names first; otherwise the generic candidate filter (for unknown-model diagnostics).
     nonisolated static func isCandidate(_ name: String) -> Bool {

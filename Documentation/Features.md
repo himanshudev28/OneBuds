@@ -10,7 +10,7 @@ This file records, for each feature, the protocol bytes, the expected response, 
 - **Observed:** the earbuds answered on the owner's hardware with the documented layout, but the owner has not yet confirmed the values.
 - **Experimental:** implemented from documentation and tested only against the simulator.
 
-**Test device:** owner's OnePlus Buds 3, product ID `063C14`, firmware **127.127.101**. Transport: RFCOMM channel 15 (`"enco link"`, SDP `0000079A-…`) on macOS 15.7.3. Captured on 2026-10-12. Replies are kept as test fixtures in `Tests/OneBudsCoreTests` (`CapturedBuds3Fixtures`).
+**Test device:** owner's OnePlus Buds 3, product ID `063C14`, firmware **127.127.101**. Transport: RFCOMM channel 15 (`"enco link"`, SDP `0000079A-…`) on macOS 15.7.3. Captured on 2026-10-12. The same feature test passed over BLE GATT (`0100`/`0200079A`) on 2026-11-03; OneBuds now tries GATT first and falls back to RFCOMM (Settings ▸ General ▸ Connection). Replies are kept as test fixtures in `Tests/OneBudsCoreTests` (`CapturedBuds3Fixtures`).
 
 | Feature | Request | Expected reply | Verification method | OnePlus Buds 3 (fw 127.127.101) | Limitations |
 |---|---|---|---|---|---|
@@ -28,12 +28,20 @@ This file records, for each feature, the protocol bytes, the expected response, 
 | Game mode / in-ear detection / dual connection | Read `0x010D <n> <ids>` → `00 <n> [<id> <v>]…`. Set `0x0403 <id> <0/1>` → `00`, then read-back | IDs: `06` game, `04` wear, `11` dual | Read-back | **Verified:** game mode `06` set on/off and read back. In-ear `04` toggles and is confirmed, but its *effect* is unconfirmed (Experimental). Dual `11`: read only (Experimental). | IDs `17` (restarts the buds) and `18` (drops the link) are never writable |
 | Touch gestures | Read `0x0108` → `00 <n> [<side> <btn> <act> <fn>]…`. Set `0x0401 <n> [entries]` → `00`, then read-back | Functions are limited to the profile's per-action list | Read-back | **Observed read:** 12 entries (per earbud: single, double, triple, hold, long-hold and slide). Double tap = `06` (next), triple tap = `05` (previous). **Verified:** left double tap set to Voice assistant and restored, both read back. | Long-hold and call gestures are not editable |
 | Multi-device list | push `0x0204 06 …` | Contains other devices' addresses and names | — | **Observed** unsolicited on connect | **Always redacted** in logs and exports, and never displayed |
+| Wear read | `0x0109` | `[00] <n> [<comp> <status>]…` | Read once on connect if no push arrived yet | **Experimental:** bitmap bit 4 set; never queried yet | Read only |
+| Custom EQ | Read `0x0122` → `00 <n>` + per preset `<sel> <min> <max> <id> <len> <name> <n> [<freq LE16> <gain>]…`. Write `0x0418 <1 create/2 save/3 delete> <-max> <max> <id> <len> <name> <n> <bands>` | `00`, then the list is read back | Create: a new id with the name appears (ids are renumbered). Save: the gains match. Delete: one fewer, the name is gone. Built-in ids are refused. | **Experimental:** bitmap bit 34 set; untested on Buds 3. Band layout copied from presets already on the buds, else S4's Buds 4 layout (62 Hz–16 kHz, ±6 dB, 3 presets) | Names are 1–16 ASCII characters |
+| BassWave | Switch `0x1D`; strength read `0x0124` → `00 FB 05 <s8>`, set `0x041B FB 05 <s8>` (−5…+5) | `00`, then read-back | Read-back | **Experimental:** bitmap bit 38 set; untested | — |
+| 3D audio / smart volume | Switches `0x1B` / `0x1C` | `00`, then read-back | Read-back | **Experimental:** listed for Buds 3 in S4; untested | Hi-Res `0x18` stays never writable |
+| Noise-control cycle | Read `0x010C 02 01` → `00 02 01 <mask>`; set `0x0404 02 01 <mask>`. Bits: Off 0, ANC 1, Transparency 2 | `00`, then read-back; push `0x0204 03 02 01 <mask>` | Read-back | **Experimental:** bitmap bit 8 set; the `02 01` read was never sent to Buds 3 | At least one mode stays selected |
+| Call controls | Gesture entries with side `04`, button `06`: double tap `00`/`1D` answer–end, long hold `00`/`1C` decline | `00`, then gesture read-back | Read-back | **Experimental:** Buds 3's table had no call entries on 127.127.101, so the section stays hidden there | — |
+| Find my earbuds | `0x0400 01` start, `0x0400 00` stop | `00` | Acknowledgement only (no state to read) | **Experimental:** bitmap bit 5 set; untested | Loud. Only on a click, with a warning next to the button |
+| Fit test | `0x0405 01`, result push `0x0204 04 [<side> <status>]…` (1 good, 0 average, 6 poor), then `0x0405 00` | `00` + push within 15 s | The push itself is the result | **Experimental:** bitmap bit 9 set; event `04` offered and subscribed | Needs both buds in |
+| Golden Sound hearing test | Start `0x040D 02 01`; tone `0x040E 03 01 <side> <freq> <level>`, stop `0x040E 04`; filter `0x0116 0C <36 bytes> <uid BE32>`; restore `0x0411 01 01 01 00 <type>`; store `0x040E 03 0C <36 bytes> <uid> <name>`; read `0x0115`; switch `0x0B` on; end `0x040D 02 00` | `00` per step; status pushes `0x0204 08 <kind> <status>` | The stored profile is read back (uid and values must match), then the switch | **Experimental:** bitmap bits 19 and 25 set; untested. Sequence from S4 section 20 | Tones start quiet and never go above level +10 |
+
+**Mac-side features** (no earbud protocol): the output-volume slider (CoreAudio, default output device) and low-battery notifications (UserNotifications; once per crossing, re-armed 5% above the threshold or when charging).
 
 **Not implemented:**
 
-- Custom EQ curves
-- Find my earbuds (plays a loud sound)
-- Spatial audio
 - Hi-Res
 - Power saving
 - Firmware update

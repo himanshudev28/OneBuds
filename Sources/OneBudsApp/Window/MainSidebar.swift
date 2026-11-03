@@ -8,12 +8,12 @@ struct MainSidebar: View {
         List(selection: $model.selection) {
             Section("Earbuds") {
                 ForEach(SidebarItem.earbuds) { item in
-                    Label(item.title, systemImage: item.symbol).tag(item)
+                    Label { Text(item.title) } icon: { SidebarIcon(item: item) }.tag(item)
                 }
             }
             Section("Information") {
                 ForEach(SidebarItem.information) { item in
-                    Label(item.title, systemImage: item.symbol).tag(item)
+                    Label { Text(item.title) } icon: { SidebarIcon(item: item) }.tag(item)
                 }
             }
         }

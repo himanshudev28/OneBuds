@@ -45,11 +45,12 @@ OnePlus Buds sound great on a Mac, but every setting lives in an Android or iOS 
 
 ### Menu-bar popover
 
-- Connection state at a glance
-- Left, right and case battery rings, with charging indicators
-- Noise-control modes, with an ANC level picker on models that have levels
-- Game mode
-- Open OneBuds, Settings… (<kbd>⌘</kbd><kbd>,</kbd>) and Quit
+- Connection state, with a one-click connect / disconnect button
+- Left, right and case battery rings, with charging and in-ear status
+- Round noise-control buttons, with an ANC level picker on models that have levels
+- The Mac's output volume
+- **Sound**, **Controls**, **Features** and **Tools** tiles, each sliding in its own page: EQ presets, BassWave, 3D audio, touch gestures, the noise-control cycle, call controls, feature switches, find my earbuds and the fit test
+- Open OneBuds, Settings (<kbd>⌘</kbd><kbd>,</kbd>) and Quit
 
 </td>
 <td width="50%" align="center">
@@ -89,10 +90,11 @@ When the earbuds connect, a small floating card appears at the top right of the 
 
 | Section | What it does |
 |---|---|
-| **Overview** | Hero card, battery, noise control and feature toggles |
+| **Overview** | Hero card, battery, noise control and feature toggles (game mode, in-ear detection, dual connection, smart volume) |
 | **Noise Control** | Off, ANC and Transparency, plus ANC levels per model |
-| **Equalizer** | The model's EQ presets as cards |
-| **Touch Gestures** | A Left / Right table for each gesture, offering only functions documented for that model |
+| **Sound** | The model's EQ presets, custom presets you draw with six faders, BassWave with its strength, and 3D audio |
+| **Controls** | A Left / Right table for each gesture, the touch-and-hold noise cycle, and call controls, offering only functions documented for that model |
+| **Tools** | Find my earbuds, the ear-tip fit test, and the Golden Sound hearing test |
 | **Device Info** | Model, firmware components and transport |
 | **Compatibility** | What each known model supports, and the evidence behind it |
 | **Diagnostics** | Read-only Bluetooth inspection, an opt-in packet log, and redacted export |
@@ -100,6 +102,14 @@ When the earbuds connect, a small floating card appears at the top right of the 
 <p align="center">
   <img src="Documentation/Screenshots/window-equalizer-light.png" width="49%" alt="Equalizer presets">
   <img src="Documentation/Screenshots/window-gestures-light.png" width="49%" alt="Touch gesture table">
+</p>
+<p align="center">
+  <img src="Documentation/Screenshots/window-tools-light.png" width="49%" alt="Tools: find my earbuds, fit test, Golden Sound">
+  <img src="Documentation/Screenshots/sheet-eq-editor-light.png" width="38%" alt="Custom EQ editor">
+</p>
+<p align="center">
+  <img src="Documentation/Screenshots/popover-page-sound-light.png" width="30%" alt="Popover Sound page">
+  <img src="Documentation/Screenshots/popover-page-controls-light.png" width="30%" alt="Popover Controls page">
 </p>
 
 ### Also included
@@ -110,6 +120,7 @@ When the earbuds connect, a small floating card appears at the top right of the 
 - **Appearance settings:** Theme (System, Light or Dark) and Style (Standard or Glass). Glass uses real Liquid Glass when built with the macOS 26 SDK and run on macOS 26 or later, and falls back to Standard when Reduce Transparency is on.
 - **Demo mode** with a simulated-model picker, so you can preview each model's controls without earbuds. It is labelled **DEMO** everywhere.
 - **Launch at login** and an optional battery percentage in the menu bar.
+- **Low-battery alerts:** a notification when an earbud drops to 10, 20 or 30% (Settings → General).
 
 #### Keyboard shortcuts
 
@@ -124,13 +135,14 @@ When the earbuds connect, a small floating card appears at the top right of the 
 
 | Model | Status | Notes |
 |---|---|---|
-| **OnePlus Buds 3** (`063C14`) | 🟢 **Verified** (fw 127.127.101) | Classic Bluetooth, RFCOMM channel 15. Verified: battery, all noise modes and ANC levels, EQ presets, game mode, touch gestures, device info and live updates. Experimental: in-ear detection and dual connection. |
-| OnePlus Nord Buds 3 Pro (`064414`) | 🟡 Experimental | The protocol reference model. Not tested with OneBuds. |
+| **OnePlus Buds 3** (`063C14`) | 🟢 **Verified** (fw 127.127.101) | Bluetooth LE (GATT) first, Classic Bluetooth (RFCOMM channel 15) as fallback; both routes passed the same 17/17 feature test. Verified: battery, all noise modes and ANC levels, EQ presets, game mode, touch gestures, device info and live updates. Experimental: in-ear detection and dual connection. |
+| OnePlus Nord Buds 3 Pro (`064414`) | 🟡 Experimental | The protocol reference model: noise levels, EQ, gestures, switches. Not tested with OneBuds. |
 | realme Buds Air 5 (`062012`) | 🟡 Experimental | The same OPO protocol with realme's own values: noise levels Light / Deep / Medium / Smart, realme EQ presets and gestures. Tries the 079A service first, then the standard serial port. Not yet tested on hardware. |
 | realme Buds T300 (`062412`) | 🟡 Experimental | As for the Air 5, but noise control has no levels (Off / Transparency / ANC) and there is no in-ear detection. Not yet tested on hardware. |
 | realme Buds Wireless 2 | 🔴 Unsupported | Uses realme's older, undocumented realme Link protocol, not OPO. Adding it needs an Android Bluetooth capture. |
-| Other realme TL models (Air 5 Pro, Air6, Air6 Pro, Air7 Pro, T310) | ⚪ Unknown | Diagnostics only. |
-| Other OnePlus models (Buds 4, Pro 2/3, Nord Buds 3, Buds Pro) | ⚪ Unknown | Diagnostics only. OneBuds never sends commands to them. |
+| 73 more OnePlus, OPPO and realme models (Buds 4, Buds Pro 2/3, Nord Buds 3/4, Enco Air/Free/X series, Enco Buds2, realme Air 5 Pro…Air8 Pro, T-series, Wireless 3/5) | 🟡 Experimental | Built from published protocol data; each model shows only the features with published values. Full list with features: [Documentation/ModelCatalog/Models.md](Documentation/ModelCatalog/Models.md). |
+| Older or undocumented models (legacy 1107 service such as Buds Pro, catalogue entries without values) | ⚪ Unknown | Diagnostics only. OneBuds never sends commands to them. |
+| realme Link type 2 and DIZO models, OPPO models without a control channel | 🔴 Unsupported | Not the OPO protocol. |
 
 Unsupported features are hidden, and experimental ones carry an **Experimental** badge. The evidence for every feature is in [Documentation/Features.md](Documentation/Features.md). Sources and licences are in [Documentation/ProtocolSources.md](Documentation/ProtocolSources.md).
 
@@ -220,6 +232,7 @@ flowchart TD
 - **Concurrency:** Swift 6 language mode with strict concurrency checking, and no suppressed warnings. Core Bluetooth and IOBluetooth objects stay on the main actor, and callbacks are copied, then hopped. The protocol session is an actor.
 - **Transports are single-use.** A reconnect creates a new transport, and every value learned from the device is reset on disconnect.
 - **Per-model parameters live in [`DeviceRegistry.swift`](Sources/OneBudsCore/DeviceRegistry.swift):** product IDs, noise-mode bytes, EQ presets, writable feature IDs and allowed gesture functions. Nothing model-specific is hard-coded in the protocol layer.
+- **Capabilities are detected, never assumed:** [`CapabilityEngine.swift`](Sources/OneBudsCore/CapabilityEngine.swift) checks each feature against the model's profile, the parameters its commands need, the earbuds' own capability list and the Bluetooth route in use (GATT or RFCOMM), and records why. It can only hide a control, never add one. Unknown devices get diagnostics only. Confirmed results are cached per model ([`CapabilityCache.swift`](Sources/OneBudsCore/CapabilityCache.swift)) as a hint for the next connection. A cached result is dropped when the firmware, the capability list or the profile changes. To add a model, add its profile to the registry; the engine needs no changes.
 - **Code layout:** the app is organized by feature (`App/`, `Design/`, `Components/`, `ConnectionCard/`, `Popover/`, `Window/`, `Settings/`, `Dev/`), one type per file.
 
 <details>
@@ -326,6 +339,12 @@ The app has two development aids, each triggered only by an environment variable
 ## Credits
 
 The protocol research behind this app is by Aasheesh, Vedanth Jadhav, spizganed (QuickBuds), Zhaoyi-ya (OppoPodsManager), the OppoPods authors, kunalagra (OtoControl), Aniket Budhwani (OPPO-Earbuds-Mac-Controller) and Vedat Kılıç (galaxy-buds-mac). OneBuds' code is written independently from those documented facts; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## License
+
+OneBuds is open source under the [MIT License](LICENSE), © 2026 Himanshu Singh. You may use, copy, change and share it, as long as the copyright and licence notice stay with it.
+
+The MIT License covers OneBuds' own code only. The protocol references listed in [ProtocolSources.md](Documentation/ProtocolSources.md) keep their own licences; no code from them is included (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
 <br>
 

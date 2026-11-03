@@ -87,9 +87,9 @@ import Testing
         #expect(buds3.opo?.noiseModes.first { $0.mode == .transparency }?.setMask == [0x04])
         #expect(air5.opo?.noiseModes.first { $0.mode == .transparency }?.setMask == [0x02])
         #expect(buds3.opo?.equalizerPresets.map(\.name).contains("Bright & Crisp") == true)
-        #expect(air5.opo?.equalizerPresets.map(\.name) == ["Pure Raw", "Deep Bass", "Pure Vocals", "Pure Bass"])
+        #expect(air5.opo?.equalizerPresets.map(\.name) == ["Pure Raw", "Deep Bass", "Pure Voice", "Pure Bass"])
         #expect(t300.presentation(.wearDetection) == .hidden)
-        #expect(DeviceRegistry.nordBuds3Pro.presentation(.equalizer) == .hidden)
+        #expect(DeviceRegistry.nordBuds3Pro.presentation(.customEqualizer) == .hidden)
     }
 
     @Test func switchingModelsReplacesEverySetting() async throws {

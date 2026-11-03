@@ -20,10 +20,13 @@ struct FeatureToggleRow: View {
                         if let symbol {
                             Image(systemName: symbol)
                                 .foregroundStyle(isOn ? Color.accentColor : .secondary)
+                                .frame(width: Theme.Size.rowIcon)
                                 .accessibilityHidden(true)
                         }
                         Text(capability.displayName)
                         CapabilityBadge(presentation: manager.presentation(capability))
+                        // Pushes the switch to the trailing edge outside a Form (the popover).
+                        Spacer(minLength: 0)
                     }
                 }
                 .toggleStyle(.switch)

@@ -45,6 +45,22 @@ final class AppSettings {
         didSet { defaults.set(animateCardModel, forKey: "animateCardModel") }
     }
 
+    /// Notify when an earbud drops to `lowBatteryThreshold` percent.
+    var lowBatteryAlerts: Bool {
+        didSet { defaults.set(lowBatteryAlerts, forKey: "lowBatteryAlerts") }
+    }
+
+    var lowBatteryThreshold: Int {
+        didSet { defaults.set(lowBatteryThreshold, forKey: "lowBatteryThreshold") }
+    }
+
+    static let lowBatteryChoices = [10, 20, 30]
+
+    /// Which Bluetooth control channels OneBuds may use (Automatic: GATT first, then RFCOMM).
+    var transportPreference: TransportPreference {
+        didSet { defaults.set(transportPreference.rawValue, forKey: "transportPreference") }
+    }
+
     private(set) var demoMode: Bool {
         didSet { defaults.set(demoMode, forKey: "demoMode") }
     }
@@ -67,6 +83,10 @@ final class AppSettings {
         cardDuration = CardDuration(rawValue: defaults.string(forKey: "cardDuration") ?? "") ?? .standard
         cardArtworkStyle = CardArtworkStyle(rawValue: defaults.string(forKey: "cardArtworkStyle") ?? "") ?? .automatic
         animateCardModel = defaults.object(forKey: "animateCardModel") as? Bool ?? true
+        lowBatteryAlerts = defaults.object(forKey: "lowBatteryAlerts") as? Bool ?? true
+        let threshold = defaults.integer(forKey: "lowBatteryThreshold")
+        lowBatteryThreshold = Self.lowBatteryChoices.contains(threshold) ? threshold : 20
+        transportPreference = TransportPreference(rawValue: defaults.string(forKey: "transportPreference") ?? "") ?? .automatic
         demoMode = defaults.bool(forKey: "demoMode")
         demoModelID = defaults.string(forKey: "demoModelID") ?? DeviceRegistry.onePlusBuds3.id
     }
