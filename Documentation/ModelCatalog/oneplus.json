@@ -1,0 +1,4974 @@
+[
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Bullets Wireless Z2",
+  "bluetoothNames": [
+   "OnePlus Bullets Wireless Z2"
+  ],
+  "productIDs": [
+   "050414"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {},
+   "functionNames": {}
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus BulletsWireless Z2 ANC",
+  "bluetoothNames": [
+   "OnePlus BulletsWireless Z2 ANC"
+  ],
+  "productIDs": [
+   "050C14"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "row25": null,
+    "row26": [
+     "0x00",
+     "0x0D"
+    ],
+    "call:36": [
+     "0x1D"
+    ],
+    "call:37": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x0D": "switch devices",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": 3
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Bullets Wireless Z3",
+  "bluetoothNames": [
+   "OnePlus Bullets Wireless Z3"
+  ],
+  "productIDs": [
+   "051014"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01"
+    ],
+    "double": [
+     "0x06"
+    ],
+    "triple": [
+     "0x05"
+    ],
+    "hold": [
+     "0x03"
+    ],
+    "call:1": [
+     "0x1D"
+    ],
+    "call:4": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x03": "voice assistant",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, spatial, eq. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds",
+  "bluetoothNames": [
+   "OnePlus Buds"
+  ],
+  "productIDs": [
+   "060414",
+   "068414"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06"
+    ]
+   },
+   "functionNames": {
+    "0x03": "voice assistant",
+    "0x01": "play/pause",
+    "0x05": "previous",
+    "0x06": "next"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc. 068414 is a second id with the same model name in S4/S5; S4 PROTOCOL s21.1 says colour ranges 100100-100102 -> 060414 and 108100-108102 -> 068414."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Z",
+  "bluetoothNames": [
+   "OnePlus Buds Z"
+  ],
+  "productIDs": [
+   "060814",
+   "068814"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06"
+    ]
+   },
+   "functionNames": {
+    "0x03": "voice assistant",
+    "0x01": "play/pause",
+    "0x05": "previous",
+    "0x06": "next"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed. 068814 second id; colour ranges 100200-100202 -> 060814, 108200-108202 -> 068814 (S4 s21.1). S4 says previous/next are fn 04/05 on this model."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro",
+  "bluetoothNames": [
+   "OnePlus Buds Pro"
+  ],
+  "productIDs": [
+   "060C14"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": false
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0001"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "0002"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "10",
+    "readValue": "0010"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "zenMode": "0x0F"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "triple": [
+     "0x03",
+     "0x05"
+    ],
+    "hold": [
+     "0x08"
+    ],
+    "row14": null,
+    "row15": null
+   },
+   "functionNames": {
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x08": "ANC cycle"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Three noise cancelling modes Faint, Smart, Extreme (15-40 dB)",
+   "Smart Adaptive Noise Cancellation",
+   "Transparency mode",
+   "SBC, AAC, LHDC",
+   "Dual Connection",
+   "Pro Gaming mode latency as low as 94ms (footnote)",
+   "IP55 earbuds, case IPX4",
+   "In-ear detection, EQ, find earbuds, spatial audio: not listed"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/global/oneplus-buds-pro",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "Gazz: SDP lists 00001107-d102-... and SPP; RFCOMM ch 15; no GATT objects",
+    "S5 uuid 00001107"
+   ],
+   "noiseModes": [
+    "github.com/GazzasaurusRex/oneplus-buds-omarchy @abe70f4 (MIT, hardware-tested Pro and Pro 2) OPOv1.md: Off 01, Trans 02, light 04, deep 08, smart 10; Off/Trans/deep(08) verified on hardware, 04 write read back as light; read bits = write bits (deep read 08)",
+    "S4 s21.3 tree (Off 0, Trans 1, Light 2, Deep 3, Smart 4)",
+    "S5 protocolIndex 0..4"
+   ],
+   "eqPresets": [
+    "github.com/GazzasaurusRex/oneplus-buds-omarchy @abe70f4 (MIT, hardware-tested Pro and Pro 2) (all four selected, read back, heard)",
+    "S5/S10"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/global/oneplus-buds-pro"
+   ]
+  },
+  "conflicts": [
+   "customEQ: S4 (customEq 1) and S5 (customEqualizer 1) say custom EQ; Gazz found no custom entries in the 0x0122 catalogue on fw 541.541.510 (preset-only).",
+   "Transport: S4 lists no uuid; S5 uuid 1107 (legacy). 079A is NOT the service on this model.",
+   "0x010D feature query got no reply on this model (Gazz), so S4 statusQuery ids (04 0B 0F 11) are list-derived only.",
+   "Smart bit 10 not hardware-verified by Gazz (only Off, Trans, light, deep)."
+  ],
+  "confidence": "high (Gazzasaurus hardware-verified on fw 541.541.510 + S4/S5)",
+  "notes": "Needs HELLO then REGISTER (B5 50 A0 69) and waits of 2 s and 1.5 s before SET per Gazz; ANC query unreliable in the same session after a SET (reconnect to verify); transparency settling race. Capability reply 0x8100 = 00 BF 17 68 26 04 (unmapped). Event codes offered 01 02 03 04 06 08 0A. Battery reply prefixes a count. Gazz states the queried ANC state uses the same bitmap as the writes (OPOv1.md); only deep (08) was seen as a read-back after a physical change plus light after a 04 write, so other read values are by that statement, 2-byte zero-padded here. Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc, aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Z2",
+  "bluetoothNames": [
+   "OnePlus Buds Z2"
+  ],
+  "productIDs": [
+   "061014"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "0004"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "triple": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "hold": [
+     "0x08"
+    ],
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x08": "ANC cycle",
+    "0x0D": "switch devices"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [
+   "noiseModes: buds-cli (PrajyotG, S2 clone) sends 01 ANC / 02 Transparency / 04 Off over BLE with non-OPO 00000001/00000002 UUIDs; S4 tree gives Off 01 / Trans 02 / Light 04 / Deep 08. S9 (low confidence) not re-read."
+  ],
+  "confidence": "low-medium (S4/S5 tree only; the only hands-on code, buds-cli, contradicts it)",
+  "notes": "Legacy 1107 service per S5. Strong/weak ANC listed as separate cycle options (S4 s21.3). Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, game, gestures, wear, find. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds",
+  "bluetoothNames": [
+   "OnePlus Nord Buds"
+  ],
+  "productIDs": [
+   "061414"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0D": "switch devices"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds N",
+  "bluetoothNames": [
+   "OnePlus Buds N"
+  ],
+  "productIDs": [
+   "061814"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00"
+    ],
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0D": "switch devices"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds CE",
+  "bluetoothNames": [
+   "OnePlus Nord Buds CE"
+  ],
+  "productIDs": [
+   "061C14"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced [modeType 17]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Mellow Soft Sound [modeType 15]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro 2",
+  "bluetoothNames": [
+   "OnePlus Buds Pro 2"
+  ],
+  "productIDs": [
+   "062014"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": false
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bass (S5: Deep Sea Bass)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Serenade (S5: Pure Vocals)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bold (S5: Bright & Crisp)",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Hans Zimmer Soundscape Tuning (S5 modeType 19: Clear Vocals)",
+    "minFirmware": 165
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "personalisedANC": "0x0C",
+    "zenMode": "0x0F"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "call:32": [
+     "0x1D"
+    ],
+    "call:33": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": 6,
+   "maxPresets": 2
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Three ANC modes Faint, Smart, Extreme (25-48 dB); up to 48dB Smart Adaptive ANC",
+   "Transparency mode",
+   "Spatial Audio with Dolby head tracking (Pro 2 only, not 2R)",
+   "LHDC, AAC, SBC",
+   "Dual connection (two devices)",
+   "BassWave, Audio ID 2.0",
+   "Press once pause/answer, twice next/reject, three times previous, 1s long press switches noise modes, 3s long press earbuds focus",
+   "IP55 earbuds, case IPX4",
+   "In-ear detection, game mode, EQ, find earbuds: not listed"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/global/oneplus-buds-pro-2",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "Gazz: 0000079a SDP, RFCOMM ch 15, no LE bearer/GATT seen"
+   ],
+   "noiseModes": [
+    "github.com/GazzasaurusRex/oneplus-buds-omarchy @abe70f4 (MIT, hardware-tested Pro and Pro 2) docs/protocols/OPOv1.md + docs/devices/oneplus-buds-pro-2.md (all seven states set and read back)",
+    "S4 models.json",
+    "S5"
+   ],
+   "eqPresets": [
+    "github.com/GazzasaurusRex/oneplus-buds-omarchy @abe70f4 (MIT, hardware-tested Pro and Pro 2) native-eq (ids 0,1,2,3,7 read back)",
+    "S4 slots 0-3,7; id7 minFirmware 165 (S4 eqPresetsCompat)"
+   ],
+   "featureSwitchIDs": [
+    "Gazz: 0x810D answered 05,04,0B,11,18,06 (04 on, 0B on, 11 off, 18 off, 06 off)",
+    "S4 statusQuery"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "customEQ": [
+    "Gazz: two device-declared custom entries (ids 4 and 5), 6 bands, -6..+6"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/global/oneplus-buds-pro-2"
+   ]
+  },
+  "conflicts": [
+   "eqPresets id 7 name: Gazz 'Hans Zimmer Soundscape Tuning' vs S5 EqModeNames 'Clear Vocals' (modeType 19). Id agrees.",
+   "EQ names ids 1-3: S5 Deep Sea Bass/Pure Vocals/Bright & Crisp vs Gazz Bass/Serenade/Bold.",
+   "customEQ.maxPresets: Gazz saw 2 custom entries declared; S4 default limit 3 (no explicit customEqLimit for this model).",
+   "Official page gives three ANC levels (Faint/Smart/Extreme); S4/S5/Gazz expose Deep/Medium/Light/Smart bits.",
+   "Gazz requires HELLO + REGISTER with B5 50 A0 69 before SET; OneBuds treats that frame as a time reply, not auth."
+  ],
+  "confidence": "high (Gazzasaurus hardware-verified on fw 196.196.101 + S4/S5; Pro 2 product id read from the buds)",
+  "notes": "Off read-back may be 0001 (index 0) or 0008 (index 3); Transparency read-back 0100. SET ack 0E when the buds are in the case (read-back unchanged). Main ANC On (02) does not reliably preserve the level. Event codes offered 01 02 03 04 08 0B F1 F2 F3 0A. Firmware 0x0105 gives kind-2 values 196/196/101 and kind-4 value 0. No Adaptive mode in the tree. Head tracking spatialModes [0,1,2] (S4/S5). Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc, aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 2",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 2"
+  ],
+  "productIDs": [
+   "062414"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ],
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0D": "switch devices",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": 2
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Ace",
+  "bluetoothNames": [
+   "OnePlus Buds Ace"
+  ],
+  "productIDs": [
+   "062814"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ],
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0D": "switch devices",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": 2
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: anc, game. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 2r",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 2r"
+  ],
+  "productIDs": [
+   "062C14"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ],
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0D": "switch devices",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, game, eq, gestures, find. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro 2（轻享版）",
+  "bluetoothNames": [
+   "OnePlus Buds Pro 2（轻享版）"
+  ],
+  "productIDs": [
+   "063014"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Clear Vocals [modeType 19]",
+    "minFirmware": 165
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "personalisedANC": "0x0C",
+    "zenMode": "0x0F"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "call:32": [
+     "0x1D"
+    ],
+    "call:33": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro 2R",
+  "bluetoothNames": [
+   "OnePlus Buds Pro 2R"
+  ],
+  "productIDs": [
+   "063414"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Clear Vocals [modeType 19]",
+    "minFirmware": 165
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "personalisedANC": "0x0C",
+    "zenMode": "0x0F"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "call:32": [
+     "0x1D"
+    ],
+    "call:33": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc, aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds 3",
+  "bluetoothNames": [
+   "OnePlus Buds 3"
+  ],
+  "productIDs": [
+   "063C14"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": true
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": 119
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 49dB ANC",
+   "3 ANC intensity levels: Mild, Moderate, Max",
+   "Adaptive ANC (scans ear canal shape)",
+   "3D Audio, no head tracking",
+   "LHDC 5.0, AAC (Bluetooth 5.3)",
+   "Dual device connection",
+   "Pro Gaming mode (as low as 94ms with select OnePlus phones)",
+   "Volume slide on stems",
+   "IP55 (case excluded)",
+   "Transparency, EQ presets, in-ear detection, find earbuds: not listed on the page"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/global/oneplus-buds-3",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "OneBuds ProtocolSources.md C2 (verified 2026-10-12)",
+    "S4",
+    "S5"
+   ],
+   "eqPresets": [
+    "S5 (3 Bright & Crisp needs minFirmVersion 119)",
+    "OneBuds Features.md (verified 0-3)"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/global/oneplus-buds-3"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "high (hardware-verified by the owner on fw 127.127.101, plus S4/S5/S10 and buildscript-dev)",
+  "notes": "No contradiction found. Official page does not list Transparency or EQ although the buds expose both (S4/S5). Official lists 3 ANC levels (Mild/Moderate/Max) while the protocol tree has 4 (Smart/Deep/Medium/Light). S11 level bits are wrong (OneBuds C2). Buildscript-dev (omarchy-oneplus-experience) also reports Buds 3 verified at fw 127.127.101 (via melodyctl claims-matrix #18, secondhand). Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, spatial, golden, eq, dual, gestures, wear, find. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc, aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro 3",
+  "bluetoothNames": [
+   "OnePlus Buds Pro 3"
+  ],
+  "productIDs": [
+   "064014"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bold (S5: Bright & Crisp, modeType 13)",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Serenade (S5: Pure Vocals, modeType 14)",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Bass (S5: Deep Sea Bass, modeType 12)",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Dynaudio (S5: Dynaudio Special, modeType 30)",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "soundRecord": "0x13"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11",
+     "0x12"
+    ],
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "hold": null,
+    "call:32": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:33": [
+     "0x00",
+     "0x1C"
+    ],
+    "call:34": [
+     "0x00",
+     "0x19"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x12": "zen mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call",
+    "0x19": "AI summary"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": 6,
+   "maxPresets": null
+  },
+  "bassLevels": "-5...+5",
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Noise reduction depth 50dB (adaptive ANC per launch coverage)",
+   "LHDC 5.0 / AAC / SBC, Bluetooth 5.4",
+   "Dual device connection",
+   "Find My Earphones",
+   "IP55",
+   "Touch: single play/pause, double next, triple previous, 1s long press noise cancellation toggle, 3s long press Zen Mode Air, slide volume",
+   "Spatial audio with head tracking (press, not the spec page)"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/us/oneplus-buds-pro-3/specs",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "nic0manz/oneplus_buds3_pro_python op_buds3_pro.py (Off 01, ANC 02, Trans 04, High/Mod/Low/Auto 10/20/40/80; readbacks 0008, 0100, 0010-0080; RFCOMM ch 15)",
+    "GewoonJaap/oneplus-buds-macos PLAN.md + src/protocol.rs (PolyForm-NC; Android app sends Off 01 and Trans 04)",
+    "S4/S5 tree"
+   ],
+   "eqPresets": [
+    "nic0manz (0,1,2,3,7)",
+    "GewoonJaap PLAN.md (0 balanced,1 bold,2 serenade,3 bass boost,7 dynaudio)",
+    "S4/S5 slots 0,1,2,3,7"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "bassLevels": [
+    "nic0manz (feature 0x1D, -5..+5)"
+   ],
+   "customEQ": [
+    "nic0manz (6 bands, gain clamp -6..+6)"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/us/oneplus-buds-pro-3/specs",
+    "press: fonearena/phonearena/notebookcheck"
+   ],
+   "noiseCycleBits": [
+    "S19 (GewoonJaap: 0x0404 02 01 mask 01 Off, 02 ANC, 04 Transparency)"
+   ]
+  },
+  "conflicts": [
+   "0x80 label: S4/S5 'Smart' (modeType 7); GewoonJaap 'Adaptive'; nic0manz 'Auto'. Same bit.",
+   "Off set byte: nic0manz and Android capture 01; GewoonJaap code sends 08 (its PLAN says that also worked on hardware). Use 01 (matches S4 and the Buds 3 verification).",
+   "EQ names: S5 Bright&Crisp/Pure Vocals/Deep Sea Bass vs projects Bold/Serenade/Bass; ids agree.",
+   "Game mode id: S4 statusQuery has 06 (no 28); GewoonJaap sets game mode with feature 0x28 and queries both 06 and 28."
+  ],
+  "confidence": "medium-high (noise/EQ/bass hardware-reported by 2 independent hobby projects + S4/S5; product id only from the HeyMelody list, no source read 0x0103 on this model)",
+  "notes": "Spatial audio per GewoonJaap: set 0x0422 <0 Off|1 Fixed|2 Head tracked>, read 0x012A (spatialModes [0,1,2] in S4 and S5 spatialTypes). Hold-cycle mask written with 0x0404 02 01 <mask>: 01 Off, 02 ANC, 04 Transparency. GewoonJaap/nic0manz both reuse the B5 50 A0 69 REGISTER frame. S4 owner report: hi-res, 3D, golden sound, dual, wear, find confirmed. Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, hires, spatial, golden, eq, dual, gestures, wear, find. triple mask 3220067 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc5, aac, sbc.",
+  "noiseCycleBits": {
+   "off": 0,
+   "noiseCancelling": 1,
+   "transparency": 2
+  }
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 3 Pro",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 3 Pro"
+  ],
+  "productIDs": [
+   "064414"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": true
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 3,
+    "name": "Balanced",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Pure Vocals",
+    "minFirmware": null
+   },
+   {
+    "id": 5,
+    "name": "Deep Sea Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "personalisedANC": "0x0C"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 49dB hybrid ANC",
+   "Smart adaptive noise cancellation",
+   "Dual device connections",
+   "Find My Earbuds",
+   "IP55",
+   "HeyMelody app",
+   "Transparency, codecs, EQ, spatial audio: not listed on the page"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/global/oneplus-nord-buds-3-pro",
+  "sources": {
+   "productIDs": [
+    "S4 PROTOCOL.md s21.1 [CAPTURE] issue #2",
+    "S5"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S1 ANCWireMapping.swift (Off 01, ANC 02, Trans 04 observed on Nord Buds 3 Pro)",
+    "S4 tree",
+    "S5 tree"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/global/oneplus-nord-buds-3-pro"
+   ]
+  },
+  "conflicts": [
+   "noiseModes: S2/S3 (cracked-oneplus-buds, and the copy Vedant1521/Cracked-Oneplus_buds) say 01=ANC, 02=Transparency, 04=Off. S1 (later) says 01 Off, 02 ANC, 04 Transparency. S4/S5 tree agrees with S1. Use S1/S4/S5.",
+   "Event ids: S4 capture says buds offer only 02 01 (wear, battery) and send no 0x8205 for 01 02 03 04 08 0B; ANC push observed once without subscribing 03.",
+   "Transport: S1/S2 control it over BLE GATT; S4 users use RFCOMM; both documented, neither tested by OneBuds."
+  ],
+  "confidence": "medium (product id captured in S4 issue #2; noise bytes agree across S1, S4, S5 but S2/S3 disagree; no cross-checked read values)",
+  "notes": "Product id 064414 answers the open item in the OneBuds registry. Needs the 0x0500 time reply or the link drops after 3-5 s (S4 issue #2). S4 owner report #50: Hi-Res (0x18) switch turns on but codec stays SBC/AAC; spatial silent (knownIssues spatial_silent, hires_no_codec). Level read-back bits assumed from the tree, not stated for this model (Gazz/nic0manz verified the same tree on Pro 2 / Pro 3). Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, game, hires, golden, eq, dual, gestures, wear, find. S4 knownIssues: spatial_silent, hires_no_codec. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds V",
+  "bluetoothNames": [
+   "OnePlus Buds V"
+  ],
+  "productIDs": [
+   "064814"
+  ],
+  "transports": {
+   "rfcomm079A": false,
+   "spp1101": null,
+   "legacy1107": true,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x00",
+     "0x0D"
+    ],
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0D": "switch devices",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Ace 2",
+  "bluetoothNames": [
+   "OnePlus Buds Ace 2"
+  ],
+  "productIDs": [
+   "064C14"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 3,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 5,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 3",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 3"
+  ],
+  "productIDs": [
+   "065014"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "01",
+    "readValue": null
+   },
+   {
+    "mode": "off",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": null
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 3,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 5,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x1D"
+    ],
+    "call:31": [
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 32dB Active Noise Cancellation",
+   "Transparency mode",
+   "OnePlus 3D Audio (no head tracking)",
+   "Dual device connection (up to two)",
+   "Master EQ with 3 presets: Balanced, Serenade, Bass",
+   "Bluetooth 5.4, ultra-low latency for gaming",
+   "IP55 (case excluded)",
+   "In-ear detection, find earbuds, gestures: not listed"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/global/oneplus-nord-buds-3",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes (NC slot0, Off slot1, Transparency slot2) + PROTOCOL.md s21.3 'Buds 4 Off bytes turn ANC on'",
+    "S5 noiseReductionMode protocolIndex 0,1,2"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/global/oneplus-nord-buds-3"
+   ]
+  },
+  "conflicts": [
+   "No source gives the read-back values for this tree; S4 only says the set bits differ from Buds 4. Leave readValue null until a read is captured."
+  ],
+  "confidence": "medium (S4 tree + S5; no raw ANC capture for this model in any source; S4 README owner reports noise control working)",
+  "notes": "Set bytes: ANC 01, Off 02, Transparency 04 (bit = slot). No levels, no wear detection (S5 has no wearDetection; S4 statusQuery lacks 04). EQ preset ids are 3 (Balanced), 4 (Pure Vocals/Serenade), 5 (Deep Sea Bass/Bass), not 0-2. Hold gesture 11 with minSelected 1. Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, game, spatial, golden, eq, dual, gestures, find. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds 4",
+  "bluetoothNames": [
+   "OnePlus Buds 4"
+  ],
+  "productIDs": [
+   "065414"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": "level-dependent (S4: last level; OP-Buds-4-PC: 0010)"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "adaptive",
+    "setBytes": "00 08",
+    "readValue": "0800"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": null,
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:30": [
+     "0x00",
+     "0x19"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x19": "AI summary",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": 6,
+   "maxPresets": null
+  },
+  "bassLevels": "-5...+5",
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 55dB Adaptive Noise Cancelling, 800x/s real-time adjustment (press cites 44dB elsewhere)",
+   "All-New Adaptive Mode (balances ANC and Transparency)",
+   "Switch between ANC and Transparency",
+   "OnePlus 3D Audio",
+   "LHDC 5.0 (1 Mbps, 24-bit/192kHz), AAC",
+   "Dual connection",
+   "Three EQ presets: Balanced, Serenade, Bass Mode; customizable six-band EQ",
+   "BassWave 2.0",
+   "Stem: single play/pause (manual enable), double next, triple previous, slide volume, long press toggles ANC/Transparency, 3 taps AI Translation",
+   "Find earbuds",
+   "IP55 (case excluded)"
+  ],
+  "officialSpecURL": "https://www.oneplus.com/ae/oneplus-buds-4",
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 PROTOCOL.md s14 [CAPTURE]",
+    "OP-Buds-4-PC-Controls docs/protocol.md (adaptive 0x0800 set via 01 01 00 08, read back; off 0008, NC 0010, transp 0100)"
+   ],
+   "eqPresets": [
+    "S4 s21.6",
+    "OP-Buds-4-PC-Controls (0 Balanced, 1 Serenade, 2 Bass, 4 custom)",
+    "official page"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ],
+   "customEQ": [
+    "OP-Buds-4-PC-Controls docs/protocol.md (record: min FA, max 06, 6 bands 62/250/1000/4000/8000/16000)"
+   ],
+   "bassLevels": [
+    "OP-Buds-4-PC-Controls (0x0124 -> 00 FB 05 05)",
+    "S4 s17"
+   ],
+   "officialFeatures": [
+    "https://www.oneplus.com/ae/oneplus-buds-4"
+   ],
+   "noiseCycleBits": [
+    "S4 (hold cycle mask 0x0007 / 0x0807 with adaptive)"
+   ]
+  },
+  "conflicts": [
+   "noiseModes levels: S4/S5 list Deep/Medium/Light/Smart; OP-Buds-4-PC saw only a plain 'Noise Cancellation' entry on the phone (mask 0010) and could not confirm sub-levels. Official page lists High ANC plus Adaptive Mode.",
+   "noiseModes bytes: hrithikvish/OnePlusBuds4-ANC-Quick-Toggle (HCI snoop + ear test) says 01 Off, 02 light ANC, 04 Transparency, 08 strong ANC, 10 Adaptive; S4 capture and OP-Buds-4-PC say 10 = Deep, adaptive = 00 08 (0x0800). 01/02/04 agree. Trust S4 + OP-Buds-4-PC (two independent captures; the other single-byte table cannot express 0x0800).",
+   "eqPresets id1 name: S4 'Clear Vocals', S5 modeType 14 'Pure Vocals', official page and OP-Buds-4-PC 'Serenade'. Id mapping agrees.",
+   "spatialAudio: S4 lists 3D audio switch 0x1B and spatial type 0x012A as confirmed; OP-Buds-4-PC saw no bud-side change when toggling 3D Audio (calls it phone-side). Unresolved.",
+   "customEQ.maxPresets: S4 default 3; Buds 4 custom record has an unidentified byte 04 after the gain limits (OP-Buds-4-PC), possibly max profile count. Unknown."
+  ],
+  "confidence": "high (S4 CAPTURE tags + independent hardware measurement by OP-Buds-4-PC-Controls; openbuds only re-uses S4)",
+  "notes": "Firmware reply 0x0105: 00 04 + ASCII 1,2,138,2,2,138,3,1,01,3,2,105 (S4 and OP-Buds-4-PC give the identical string). Adaptive is bit 11, not 8. Hi-Res 0x18 is refused while AAC plays and drops the control link on Windows. Power saving 0x17 restarts the buds. Hold cycle mask 0x0007 / 0x0807 with adaptive (S4). Set refused with status 0E when no bud in ear. Product id reply 00 14 54 06. Nord Buds 3 note: its older tree means Buds 4 Off bytes turn ANC on there. Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, wind, game, hires, spatial, golden, eq, dual, gestures, wear, find. triple mask 3154531 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc5, aac, sbc.",
+  "noiseCycleBits": {
+   "off": 0,
+   "noiseCancelling": 1,
+   "transparency": 2,
+   "adaptive": 11
+  }
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 3r",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 3r"
+  ],
+  "productIDs": [
+   "065854"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "logCollection": "0x1E"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, game, spatial, eq, dual, gestures, find. triple mask 3154529 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Open Buds",
+  "bluetoothNames": [
+   "OnePlus Open Buds"
+  ],
+  "productIDs": [
+   "065C14"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Default [modeType 35]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Energetic & Dynamic [modeType 34]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals Enjoy [modeType 28]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x0B",
+     "0x0C",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "hold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:30": [
+     "0x00",
+     "0x19"
+    ]
+   },
+   "functionNames": {
+    "0x03": "voice assistant",
+    "0x01": "play/pause",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x00": "none",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x19": "AI summary"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. triple mask 3154553 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds 3V",
+  "bluetoothNames": [
+   "OnePlus Buds 3V"
+  ],
+  "productIDs": [
+   "066054"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "logCollection": "0x1E"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    62,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. triple mask 3154529 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Ace 3",
+  "bluetoothNames": [
+   "OnePlus Buds Ace 3"
+  ],
+  "productIDs": [
+   "066414"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "logCollection": "0x1E",
+    "gameSound": "0x27",
+    "gameMainSwitch": "0x28",
+    "swiftPair": "0x37"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. triple mask 3154529 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc5, aac. Present in the HeyMelody list (S4/S5/S10) but no official spec page was retrieved in this run; no protocol capture found for it beyond the S4 model entry."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 4 Pro",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 4 Pro"
+  ],
+  "productIDs": [
+   "066814"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "logCollection": "0x1E",
+    "gameSound": "0x27",
+    "gameMainSwitch": "0x28",
+    "swiftPair": "0x37"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, game, spatial, eq, dual, gestures, wear, find. triple mask 3154529 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc5, aac, sbc. Press (not oneplus.com): Nord Buds 4 Pro launched India 2026-03-19, up to 55dB ANC, LHDC, 12mm drivers, up to 54h with case; Nord Buds 4 up to 52dB ANC, Bluetooth 6.1 (soundguys/gsmarena/etvbharat via WebSearch; official pages not fetched)."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Nord Buds 4",
+  "bluetoothNames": [
+   "OnePlus Nord Buds 4"
+  ],
+  "productIDs": [
+   "067014"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "logCollection": "0x1E",
+    "gameSound": "0x27",
+    "gameMainSwitch": "0x28",
+    "swiftPair": "0x37"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "longHold": [
+     "0x0B",
+     "0x0C",
+     "0x00"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": true,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, anc, game, spatial, golden, eq, dual, gestures, wear, find. triple mask 1057377 has unnamed bits 0x100000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: aac, sbc. Press (not oneplus.com): Nord Buds 4 Pro launched India 2026-03-19, up to 55dB ANC, LHDC, 12mm drivers, up to 54h with case; Nord Buds 4 up to 52dB ANC, Bluetooth 6.1 (soundguys/gsmarena/etvbharat via WebSearch; official pages not fetched)."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Flow Buds",
+  "bluetoothNames": [
+   "OnePlus Flow Buds"
+  ],
+  "productIDs": [
+   "067414"
+  ],
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": false,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "logCollection": "0x1E",
+    "gameSound": "0x27",
+    "gameMainSwitch": "0x28",
+    "swiftPair": "0x37"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x02",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x02",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "hold": null,
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:31": [
+     "0x00",
+     "0x1C"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x02": "listening music",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. triple mask 3154531 has unnamed bits 0x300000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed. Present in the HeyMelody list (S4/S5/S10) but no official spec page was retrieved in this run; no protocol capture found for it beyond the S4 model entry."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Pro 4",
+  "bluetoothNames": [
+   "OnePlus Buds Pro 4"
+  ],
+  "productIDs": [
+   "067814"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "anc",
+    "setBytes": "02",
+    "readValue": null
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "80",
+    "readValue": "0080"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "10",
+    "readValue": "0010"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "20",
+    "readValue": "0020"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "40",
+    "readValue": "0040"
+   },
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "0008"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "04",
+    "readValue": "0100"
+   },
+   {
+    "mode": "adaptive",
+    "setBytes": "00 08",
+    "readValue": null
+   },
+   {
+    "mode": "other:adaptive-child-mode10 (slot 12)",
+    "setBytes": "00 10",
+    "readValue": "1000"
+   },
+   {
+    "mode": "other:adaptive-child-mode11 (slot 13)",
+    "setBytes": "00 20",
+    "readValue": "2000"
+   },
+   {
+    "mode": "other:adaptive-child-mode12 (slot 14)",
+    "setBytes": "00 40",
+    "readValue": "4000"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Bright & Crisp [modeType 13]",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Deep Sea Bass [modeType 12]",
+    "minFirmware": null
+   },
+   {
+    "id": 7,
+    "name": "Dynaudio Special [modeType 30]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "zenMode": "0x0F",
+    "soundRecord": "0x13",
+    "logCollection": "0x1E",
+    "gameSound": "0x27",
+    "gameMainSwitch": "0x28",
+    "speechPerception": "0x32",
+    "swiftPair": "0x37",
+    "headMotion": "0x3B",
+    "sleepDetection": "0x3A"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "0x01",
+     "0x00"
+    ],
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11",
+     "0x12"
+    ],
+    "slide": [
+     "0x00",
+     "0x07",
+     "0x0A"
+    ],
+    "hold": null,
+    "call:32": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:33": [
+     "0x00",
+     "0x1C"
+    ],
+    "call:34": [
+     "0x00",
+     "0x19"
+    ]
+   },
+   "functionNames": {
+    "0x01": "play/pause",
+    "0x00": "none",
+    "0x03": "voice assistant",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode",
+    "0x12": "zen mode",
+    "0x07": "volume (slide)",
+    "0x0A": "switch track (slide)",
+    "0x1D": "answer/end call",
+    "0x1C": "decline call",
+    "0x19": "AI summary"
+   }
+  },
+  "customEQ": {
+   "bands": [
+    31,
+    62,
+    125,
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000
+   ],
+   "maxGainDb": null,
+   "maxPresets": null
+  },
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. single mask 16777732 has unnamed bits 0x1000000 double mask 8397413 has unnamed bits 0x800000 triple mask 42017377 has unnamed bits 0x2800000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: not listed. Present in the HeyMelody list (S4/S5/S10) but no official spec page was retrieved in this run; no protocol capture found for it beyond the S4 model entry. S5 DeviceModels.json is older and lacks 067814; its ANC tree here adds an adaptive-style family (modes 10-13, slots 11-14) from S4 only. S4 marks wearDetection 2. S4 ancModes: top-level mode 10 slot 11 with variants modes 11/12/13 slots 12/13/14 (names not given by any source); the read values for children are computed as 1<<slot per the S4 rule, not stated for this model."
+ },
+ {
+  "brand": "OnePlus",
+  "model": "OnePlus Buds Clip",
+  "bluetoothNames": [
+   "OnePlus Buds Clip"
+  ],
+  "productIDs": [
+   "06E410"
+  ],
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Balanced (Default) [modeType 11]",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "modeType 41 [modeType 41]",
+    "minFirmware": 130
+   },
+   {
+    "id": 2,
+    "name": "Pure Vocals [modeType 14]",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Energetic & Dynamic [modeType 34]",
+    "minFirmware": null
+   },
+   {
+    "id": 4,
+    "name": "Dynaudio Special [modeType 30]",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": "0x1C",
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "lostReminder": "0x16",
+    "logCollection": "0x1E",
+    "swiftPair": "0x37"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "0x03",
+     "0x01",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "triple": [
+     "0x03",
+     "0x0B",
+     "0x0C",
+     "0x05",
+     "0x06",
+     "0x00",
+     "0x11"
+    ],
+    "slide": [
+     "0x00",
+     "0x07"
+    ],
+    "call:29": [
+     "0x00",
+     "0x1D"
+    ],
+    "call:30": [
+     "0x00",
+     "0x19"
+    ]
+   },
+   "functionNames": {
+    "0x03": "voice assistant",
+    "0x01": "play/pause",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x00": "none",
+    "0x11": "game mode",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x07": "volume (slide)",
+    "0x1D": "answer/end call",
+    "0x19": "AI summary"
+   }
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": [],
+  "officialSpecURL": null,
+  "sources": {
+   "productIDs": [
+    "S4 models.json (HEAD 5f5a00f)",
+    "S5 DeviceModels.json"
+   ],
+   "transports": [
+    "S5 uuid/supportSpp"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slot/variants + PROTOCOL.md s14 (set bit = slot, read bit = child slot)"
+   ],
+   "eqPresets": [
+    "S4 eqPresets slot=0x0406 id",
+    "S5 EqModeNames.en.json for modeType names"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery ids + PROTOCOL.md s16 id table"
+   ],
+   "gestures": [
+    "S4 gestures/callGestures option masks decoded with PROTOCOL.md s21.4 bit table; S5 function.control"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium (HeyMelody list + owner-confirmed rows in S4; no raw capture cited for this model)",
+  "notes": "Generated from S4+S5 only; both derive from the HeyMelody whitelist so they are not independent. Not hardware-verified by any source found. S4 owner-confirmed rows: battery, game, hires, spatial, eq, dual, gestures, wear, find. double mask 8397413 has unnamed bits 0x800000 triple mask 8397433 has unnamed bits 0x800000. customEQ.maxGainDb null here (S4 PROTOCOL s17 says tag FA 06 = -6..+6 seen in every frame, but per-model not stated). Codecs per S4: lhdc5, aac, sbc. Present in the HeyMelody list (S4/S5/S10) but no official spec page was retrieved in this run; no protocol capture found for it beyond the S4 model entry."
+ }
+]

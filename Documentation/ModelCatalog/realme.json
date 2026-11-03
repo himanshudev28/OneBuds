@@ -1,0 +1,5510 @@
+[
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 2S",
+  "bluetoothNames": [
+   "realme Buds Wireless 2S"
+  ],
+  "productIDs": [
+   "050412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 3",
+  "bluetoothNames": [
+   "realme Buds Wireless 3"
+  ],
+  "productIDs": [
+   "050812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "08",
+    "readValue": "08"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, spatial, golden, eq, dual, wear (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 3 Neo",
+  "bluetoothNames": [
+   "realme Buds Wireless 3 Neo"
+  ],
+  "productIDs": [
+   "050C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "1": 8805,
+    "2": 8805,
+    "3": 8805,
+    "4": 8805
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": true
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 Neckband single multifunction button (S4 oneButton). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 5 ANC",
+  "bluetoothNames": [
+   "realme Buds Wireless 5 ANC"
+  ],
+  "productIDs": [
+   "051412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "1": 8805,
+    "2": 8805,
+    "3": 8805,
+    "4": 8805
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": true
+  },
+  "customEQ": {
+   "supported": true,
+   "source": "realme-unlink (hardware-tested on 051412)",
+   "bandsHz": [
+    50,
+    250,
+    1000,
+    4000,
+    8000,
+    16000
+   ],
+   "note": "custom profile id 4"
+  },
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "eqPresets names: S4 says Pure Raw/Deep Bass/Pure Voice/Pure Bass; realme-unlink (hardware-tested on 051412) says Nature Balance/Bass Boost/Clear Vocals/Clear Bass. Same ids 0-3. Project 'Pure Vocals' vs S4 'Pure Voice'.",
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "customEQ: S4 gives 051412 no customEq flag, but realme-unlink (hardware) has custom EQ id 4 with bands 50/250/1000/4000/8000/16000 Hz; S4 default bands are 62/250/1k/4k/8k/16k."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B Neckband single multifunction button (S4 oneButton). realme-unlink (github.com/eggmasonvalue/realme-unlink @08f29eb, RMA2412 hardware-tested): noise Off 1, Transparency 2, Mild 4, Max 8, Moderate 16, Smart 32; switches game 6, auto answer 8, dual 17(0x11), de-wind 26, spatial 27, dynamic bass 29; gesture functions none 0, play/pause 1, voice assistant 4, prev 5, next 6, game 17; Bluetooth name 'realme Buds Wireless 5 ANC'. License not stated (no LICENSE seen). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 6 Neo",
+  "bluetoothNames": [
+   "realme Buds Wireless 6 Neo"
+  ],
+  "productIDs": [
+   "051812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "1": 8805,
+    "2": 8805,
+    "3": 8805,
+    "4": 8805
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": true
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 1B Neckband single multifunction button (S4 oneButton). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 6",
+  "bluetoothNames": [
+   "realme Buds Wireless 6"
+  ],
+  "productIDs": [
+   "051C52"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "1": 8805,
+    "2": 8805,
+    "3": 8805,
+    "4": 8805
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": true
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "name: S4/S5 call 051C52 'realme Buds Wireless 6', S10 calls it 'realme TechLife Buds Z3'."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 1B Neckband single multifunction button (S4 oneButton). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 6 ANC",
+  "bluetoothNames": [
+   "realme Buds Wireless 6 ANC"
+  ],
+  "productIDs": [
+   "052052"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "single": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "1": 8805,
+    "2": 8805,
+    "3": 8805,
+    "4": 8805
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": true
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "name: S4/S5 call 052052 'realme Buds Wireless 6 ANC', S10 calls it 'realme TechLife Buds Z3 ANC'."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B Neckband single multifunction button (S4 oneButton). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T100",
+  "bluetoothNames": [
+   "realme Buds T100"
+  ],
+  "productIDs": [
+   "060020"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S4 models.json (has OPO statusQuery)"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "statusQuery ids: 05 06 0B 09 S4 README: owner-confirmed on Android with QuickBuds: battery, game, golden (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 3",
+  "bluetoothNames": [
+   "realme Buds Air 3"
+  ],
+  "productIDs": [
+   "060812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Q2s",
+  "bluetoothNames": [
+   "realme Buds Q2s"
+  ],
+  "productIDs": [
+   "060C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 3S",
+  "bluetoothNames": [
+   "realme Buds Air 3S"
+  ],
+  "productIDs": [
+   "061012"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0B": "volume up",
+    "0x0C": "volume down"
+   },
+   "optionMasks": {
+    "2": 637,
+    "3": 637,
+    "4": 637
+   },
+   "holdMask": null,
+   "bothHold": true,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 Hold on both buds is a single entry (dev 04), options per mask. No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T100",
+  "bluetoothNames": [
+   "realme Buds T100"
+  ],
+  "productIDs": [
+   "061412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "gestures": [
+    "S15 RealmeBudsT100Coordinator (name \"realme Buds T100\")"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). S15 RealmeBudsT100Coordinator (name \"realme Buds T100\"): tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04); both-bud hold OFF/GAME(11) S4 README: owner-confirmed on Android with QuickBuds: battery, game, golden (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 3 Neo",
+  "bluetoothNames": [
+   "realme Buds Air 3 Neo"
+  ],
+  "productIDs": [
+   "061812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). S4 README: owner-confirmed on Android with QuickBuds: battery (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 5 Pro",
+  "bluetoothNames": [
+   "realme Buds Air 5 Pro"
+  ],
+  "productIDs": [
+   "061C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)",
+    "S15 RealmeBudsAir5ProCoordinator (name \"realme Buds Air 5 Pro\")"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "gestures: S15 offers previous/volume options per bud for this model; S4 options mask for double tap (581) decodes to none/play-pause/next/voice only. Option sets differ."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 0B 11 18 1B S15 RealmeBudsAir5ProCoordinator (name \"realme Buds Air 5 Pro\"): tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04); both-bud hold OFF/GAME(11) S4 README: owner-confirmed on Android with QuickBuds: anc (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 5",
+  "bluetoothNames": [
+   "realme Buds Air 5"
+  ],
+  "productIDs": [
+   "062012"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "0D",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x0D": "switch devices",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 12921,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "featureSwitchIDs.powerSaving: project notes power saving as 0x05; S4 says 0x05 is the first id in every query whose value is ignored and never written by the vendor app, and calls realme Link's power-saving mapping 'unresolved'. OPPO/OnePlus power saving is 0x17. Do not write 0x05."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T300",
+  "bluetoothNames": [
+   "realme Buds T300"
+  ],
+  "productIDs": [
+   "062412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "08",
+    "readValue": "08"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "0D",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x0D": "switch devices",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 12921,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)",
+    "S15 RealmeBudsT300Coordinator"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "gestures: S15 offers previous/volume options per bud for this model; S4 options mask for double tap (581) decodes to none/play-pause/next/voice only. Option sets differ.",
+   "featureSwitchIDs.powerSaving: project notes power saving as 0x05; S4 says 0x05 is the first id in every query whose value is ignored and never written by the vendor app, and calls realme Link's power-saving mapping 'unresolved'. OPPO/OnePlus power saving is 0x17. Do not write 0x05."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 1B S15 RealmeBudsT300Coordinator: tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04); both-bud hold OFF/GAME(11) S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, spatial, eq, gestures, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T110",
+  "bluetoothNames": [
+   "realme Buds T110"
+  ],
+  "productIDs": [
+   "062812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0B": "volume up",
+    "0x0C": "volume down"
+   },
+   "optionMasks": {
+    "2": 637,
+    "3": 637,
+    "4": 637
+   },
+   "holdMask": null,
+   "bothHold": true,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)",
+    "S15 RealmeBudsT110Coordinator"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 Hold on both buds is a single entry (dev 04), options per mask. S15 RealmeBudsT110Coordinator: tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04); both-bud hold OFF/GAME(11) S4 README: owner-confirmed on Android with QuickBuds: battery, gestures (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air6 Pro",
+  "bluetoothNames": [
+   "realme Buds Air6 Pro"
+  ],
+  "productIDs": [
+   "063012"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "windNoiseReduction": "0x1A"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)",
+    "S15 RealmeBudsAir6ProCoordinator (name \"realme Buds Air6 Pro\")"
+   ]
+  },
+  "conflicts": [
+   "transport: S15 Gadgetbridge uses standard SPP 1101 for this model; S5 lists uuid 0000079A for it. Not tested which of the two the buds expose (possibly both).",
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "gestures: S15 offers previous/volume options per bud for this model; S4 options mask for double tap (581) decodes to none/play-pause/next/voice only. Option sets differ."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 0B 11 18 1B S15 RealmeBudsAir6ProCoordinator (name \"realme Buds Air6 Pro\"): tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04),GAME(11),NOISE_CONTROL(08) S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, spatial, golden, eq, dual, gestures, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air6",
+  "bluetoothNames": [
+   "realme Buds Air6"
+  ],
+  "productIDs": [
+   "063412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "0D",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x0D": "switch devices",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 12921,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 18 S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, eq, dual, wear, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds N1 Pro",
+  "bluetoothNames": [
+   "realme Buds N1 Pro"
+  ],
+  "productIDs": [
+   "063812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "0D",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x0D": "switch devices",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 12921,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 18 No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T310",
+  "bluetoothNames": [
+   "realme Buds T310"
+  ],
+  "productIDs": [
+   "063C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "windNoiseReduction": "0x1A",
+    "volumeEnhancerCmd 0x0407 (S12/realme-unlink style, not a 0x0403 switch)": "0x0407"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": {
+   "supported": true,
+   "source": "S4 customEq flag",
+   "bandsHz": null,
+   "note": "S4 default when no customEqBands: 6 bands 62/250/1k/4k/8k/16k, limit 3 presets; cmd 0x0418 per bitmap"
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 46dB hybrid ANC",
+   "12.4mm dynamic driver",
+   "360 degree spatial audio",
+   "Up to 40h total playback (about 26h with ANC on)",
+   "Bluetooth 5.4, 45ms low latency mode, dual-device connection",
+   "IP55"
+  ],
+  "officialSpecURL": "https://www.fonearena.com/blog/430743/realme-buds-t310-price-india-features.html",
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B 1D BassWave switch 0x1D + low/mid/high band writes (band byte 01/02/03) (bassBands 3); level range not stated by sources. S4 README: owner-confirmed on Android with QuickBuds: battery, anc, wind, game, spatial, eq, dual, gestures, find (uses S4's own tables, so it is hardware evidence for those). officialFeatures are from launch coverage (realme.com pages were not retrievable), not the realme spec page."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds N1",
+  "bluetoothNames": [
+   "realme Buds N1"
+  ],
+  "productIDs": [
+   "064012"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T01",
+  "bluetoothNames": [
+   "realme Buds T01"
+  ],
+  "productIDs": [
+   "064412"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "volumeEnhancerCmd 0x0407 (S12/realme-unlink style, not a 0x0403 switch)": "0x0407"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0B": "volume up",
+    "0x0C": "volume down"
+   },
+   "optionMasks": {
+    "2": 637,
+    "3": 637,
+    "4": 637
+   },
+   "holdMask": null,
+   "bothHold": true,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "low",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). S4: eqKind 2 (T01-style) has three presets with unknown ids; no EQ until captured. statusQuery ids: 05 06 Hold on both buds is a single entry (dev 04), options per mask. No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air7",
+  "bluetoothNames": [
+   "realme Buds Air7"
+  ],
+  "productIDs": [
+   "064812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 11 18 1B S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, spatial, golden, eq, dual, gestures, wear, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air7 Pro",
+  "bluetoothNames": [
+   "realme Buds Air7 Pro"
+  ],
+  "productIDs": [
+   "064C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {
+    "windNoiseReduction": "0x1A"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8801,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 53dB ANC",
+   "LHDC 5.0 / Hi-Res certified, AAC, SBC (one source lists LDAC/AAC/SBC instead)",
+   "Dual drivers 11mm + 6mm",
+   "45ms low-latency gaming mode",
+   "IP55",
+   "Bluetooth 5.4",
+   "AI live translation",
+   "360 spatial audio (Flipkart listing title)"
+  ],
+  "officialSpecURL": "https://www.fonearena.com/blog/452107/realme-buds-air-7-pro-price-features.html",
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). S4 README: owner-confirmed on Android with QuickBuds: battery, anc, wind, game, hires, spatial, golden, eq, gestures, wear, find (uses S4's own tables, so it is hardware evidence for those). officialFeatures are from launch coverage (realme.com pages were not retrievable), not the realme spec page."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T200 Lite",
+  "bluetoothNames": [
+   "realme Buds T200 Lite"
+  ],
+  "productIDs": [
+   "065052"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "hold": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0B": "volume up",
+    "0x0C": "volume down"
+   },
+   "optionMasks": {
+    "2": 637,
+    "3": 637,
+    "4": 637
+   },
+   "holdMask": null,
+   "bothHold": true,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "name: S4/S5 call 065052 'realme Buds T200 Lite', S10 calls it 'realme Buds T02'.",
+   "id 065052 appears twice in S10 (realme Buds T02; realme Buds T200 Lite)."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 Hold on both buds is a single entry (dev 04), options per mask. No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T200",
+  "bluetoothNames": [
+   "realme Buds T200"
+  ],
+  "productIDs": [
+   "065452"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "08",
+    "readValue": "08"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid",
+    "S15 coordinator ctrlUuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)",
+    "S15 RealmeBudsT200Coordinator"
+   ]
+  },
+  "conflicts": [
+   "transport: S15 Gadgetbridge uses standard SPP 1101 for this model; S5 lists uuid 0000079A for it. Not tested which of the two the buds expose (possibly both).",
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 18 1B 1D S15 RealmeBudsT200Coordinator: tap2/tap3/hold options OFF,PLAY_PAUSE,PREV,NEXT,VOL+,VOL-,VOICE(04),GAME(11),NOISE_CONTROL(08) BassWave switch 0x1D + low/mid/high band writes (band byte 01/02/03) (bassBands 3); level range not stated by sources. S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, spatial, golden, eq, dual, gestures, wear, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T200x",
+  "bluetoothNames": [
+   "realme Buds T200x"
+  ],
+  "productIDs": [
+   "065852"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "08",
+    "readValue": "08"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": "0x1D",
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C"
+    ],
+    "triple": [
+     "00",
+     "01",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x05": "previous",
+    "0x06": "next",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 637,
+    "3": 8829,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": true,
+   "oneButton": false
+  },
+  "customEQ": {
+   "supported": true,
+   "source": "S4 customEq flag",
+   "bandsHz": null,
+   "note": "S4 default when no customEqBands: 6 bands 62/250/1k/4k/8k/16k, limit 3 presets; cmd 0x0418 per bitmap"
+  },
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1D Hold on both buds is a single entry (dev 04), options per mask. BassWave switch 0x1D + low/mid/high band writes (band byte 01/02/03) (bassBands absent); level range not stated by sources. S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, eq, dual, gestures (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Clip",
+  "bluetoothNames": [
+   "realme Buds Clip"
+  ],
+  "productIDs": [
+   "065C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 1B S4 README: owner-confirmed on Android with QuickBuds: battery, spatial, eq, gestures, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme TechLife Buds",
+  "bluetoothNames": [
+   "realme TechLife Buds"
+  ],
+  "productIDs": [
+   "066012"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825
+   },
+   "holdMask": null,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). No noise control listed (S4 no ancModes; S10 empty noiseItems). statusQuery ids: 05 06 11 1B No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T500 Pro",
+  "bluetoothNames": [
+   "realme Buds T500 Pro"
+  ],
+  "productIDs": [
+   "066452"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {
+    "windNoiseReduction": "0x1A",
+    "volumeEnhancerCmd 0x0407 (S12/realme-unlink style, not a 0x0403 switch)": "0x0407"
+   }
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": false,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "hearingTest: S4 README lists hearing profile as owner-confirmed on T500 Pro, but S4 PROTOCOL.md 21.5 says T500 Pro has no hearing profile (report #21) and its buds do not answer the tones.",
+   "name: S4/S5 call 066452 'realme Buds T500 Pro', S10 calls it 'realme Buds T300 Pro'.",
+   "id 066452 appears twice in S10 (realme Buds T300 Pro; realme Buds T500 Pro).",
+   "name: S10 lists 066452 as both 'T300 Pro' and 'T500 Pro'; S4/S5 and S12 name it T500 Pro."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 11 18 1B S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, spatial, golden, eq, dual, gestures, wear, find (uses S4's own tables, so it is hardware evidence for those). S12 (Zeno-cc) hardware-tested on T500 Pro: off 01, transparency 02, mild 04, max 08, moderate 10, smart 20 (S12 DeviceProfile.swift). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air8",
+  "bluetoothNames": [
+   "realme Buds Air8"
+  ],
+  "productIDs": [
+   "066812"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": {
+   "supported": true,
+   "source": "S4 customEq flag",
+   "bandsHz": null,
+   "note": "S4 default when no customEqBands: 6 bands 62/250/1k/4k/8k/16k, limit 3 presets; cmd 0x0418 per bitmap"
+  },
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 11 18 1B S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, spatial, golden, eq, dual, gestures, wear, find (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air8 Pro",
+  "bluetoothNames": [
+   "realme Buds Air8 Pro"
+  ],
+  "productIDs": [
+   "066C12"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": "0x0B",
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8801,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": true,
+  "noiseCycle": true,
+  "officialFeatures": [
+   "Up to 55dB ANC, adaptive",
+   "LHDC 5.0, 45ms low latency",
+   "11mm dynamic + 6mm micro-planar dual driver, dual DAC",
+   "Bluetooth 6.1",
+   "Up to 50h total playback",
+   "AI simultaneous interpretation, 32 languages"
+  ],
+  "officialSpecURL": "https://www.fonearena.com/blog/483389/realme-buds-air-8-pro-price-india-features.html",
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "high",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 0B 11 18 1B S4 README: owner-confirmed on Android with QuickBuds: battery, anc, game, hires, golden, dual, gestures, wear (uses S4's own tables, so it is hardware evidence for those). officialFeatures are from launch coverage (realme.com pages were not retrievable), not the realme spec page."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T500",
+  "bluetoothNames": [
+   "realme Buds T500"
+  ],
+  "productIDs": [
+   "067052"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc",
+    "setBytes": "08",
+    "readValue": "08"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": null,
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "name: S4/S5 call 067052 'realme Buds T500', S10 calls it 'realme TechLife Buds T500'."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 06 11 1B No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds T500 Pro Harry Potter Edition",
+  "bluetoothNames": [
+   "realme Buds T500 Pro Harry Potter Edition"
+  ],
+  "productIDs": [
+   "067452"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": true,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04.",
+   "name: S4/S5 call 067452 'realme Buds T500 Pro Harry Potter Edition', S10 calls it 'realme Buds T500 Pro HP Ed'."
+  ],
+  "confidence": "medium",
+  "notes": "S5 supportSpp=true (meaning not documented in S5). statusQuery ids: 05 04 06 11 18 1B No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme TechLife Buds T500 Pro",
+  "bluetoothNames": [
+   "realme TechLife Buds T500 Pro"
+  ],
+  "productIDs": [
+   "067852"
+  ],
+  "protocol": "OPOv1",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": [
+   {
+    "mode": "off",
+    "setBytes": "01",
+    "readValue": "01"
+   },
+   {
+    "mode": "transparency",
+    "setBytes": "02",
+    "readValue": "02"
+   },
+   {
+    "mode": "anc-light",
+    "setBytes": "04",
+    "readValue": "04"
+   },
+   {
+    "mode": "anc-deep",
+    "setBytes": "08",
+    "readValue": "08"
+   },
+   {
+    "mode": "anc-medium",
+    "setBytes": "10",
+    "readValue": "10"
+   },
+   {
+    "mode": "anc-smart",
+    "setBytes": "20",
+    "readValue": "20"
+   }
+  ],
+  "eqPresets": [
+   {
+    "id": 0,
+    "name": "Pure Raw",
+    "minFirmware": null
+   },
+   {
+    "id": 1,
+    "name": "Deep Bass",
+    "minFirmware": null
+   },
+   {
+    "id": 2,
+    "name": "Pure Voice",
+    "minFirmware": null
+   },
+   {
+    "id": 3,
+    "name": "Pure Bass",
+    "minFirmware": null
+   }
+  ],
+  "featureSwitchIDs": {
+   "gameMode": "0x06",
+   "wearDetection": "0x04",
+   "dualConnection": "0x11",
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": "0x1B",
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": "0x18",
+   "other": {}
+  },
+  "gestures": {
+   "actions": {
+    "double": [
+     "00",
+     "01",
+     "04",
+     "06"
+    ],
+    "triple": [
+     "00",
+     "04",
+     "05",
+     "06",
+     "0B",
+     "0C",
+     "11"
+    ],
+    "hold": [
+     "00",
+     "04",
+     "08",
+     "11"
+    ]
+   },
+   "functionNames": {
+    "0x00": "none",
+    "0x01": "play/pause",
+    "0x04": "voice assistant (realme; S4 table says 03)",
+    "0x06": "next",
+    "0x05": "previous",
+    "0x0B": "volume up",
+    "0x0C": "volume down",
+    "0x11": "game mode",
+    "0x08": "noise control cycle"
+   },
+   "optionMasks": {
+    "2": 581,
+    "3": 8825,
+    "11": null
+   },
+   "holdMask": 8833,
+   "bothHold": false,
+   "oneButton": false
+  },
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": true,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S4 models.json (has OPO statusQuery)"
+   ],
+   "transports": [
+    "S5 uuid"
+   ],
+   "noiseModes": [
+    "S4 models.json ancModes slots + PROTOCOL.md 21.3 (realme set==read)",
+    "S10 realme-models.json noiseItems (names/levels only, not values)"
+   ],
+   "eqPresets": [
+    "S4 PROTOCOL.md 21.6"
+   ],
+   "featureSwitchIDs": [
+    "S4 statusQuery (ids realme Link asks for; not proof of support unless in confirmed)"
+   ],
+   "gestures": [
+    "S4 models.json options mask + PROTOCOL.md 21.4 bit table (decoded by me; act mapping gesture2=double,3=triple,4/11=hold)"
+   ]
+  },
+  "conflicts": [
+   "gestures: voice assistant code is 04 on realme per S15 + realme-unlink (both hardware/RE-based); S4 options bit 1 documents it as 03 (OnePlus code). Decoded masks above show 04."
+  ],
+  "confidence": "medium",
+  "notes": "statusQuery ids: 05 04 06 11 18 1B No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 2 Neo",
+  "bluetoothNames": [
+   "realme Buds Air 2 Neo"
+  ],
+  "productIDs": [
+   "1B5374"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air",
+  "bluetoothNames": [
+   "realme Buds Air"
+  ],
+  "productIDs": [
+   "3D59CF"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Cobble Speaker",
+  "bluetoothNames": [
+   "realme Cobble Speaker"
+  ],
+  "productIDs": [
+   "49074B"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "medium",
+  "notes": "S4 README: owner-confirmed on Android with QuickBuds: battery, game (uses S4's own tables, so it is hardware evidence for those). No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Q2",
+  "bluetoothNames": [
+   "realme Buds Q2"
+  ],
+  "productIDs": [
+   "693878"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air Pro",
+  "bluetoothNames": [
+   "realme Buds Air Pro"
+  ],
+  "productIDs": [
+   "8CD10F"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Brick Speaker",
+  "bluetoothNames": [
+   "realme Brick Speaker"
+  ],
+  "productIDs": [
+   "A5FD66"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air 2",
+  "bluetoothNames": [
+   "realme Buds Air 2"
+  ],
+  "productIDs": [
+   "BA5D56"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 2",
+  "bluetoothNames": [
+   "realme Buds Wireless 2"
+  ],
+  "productIDs": [
+   "C1E2B1"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": true,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless 2 Neo",
+  "bluetoothNames": [
+   "realme Buds Wireless 2 Neo"
+  ],
+  "productIDs": [
+   "C70A6D"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Pocket Speaker",
+  "bluetoothNames": [
+   "realme Pocket Speaker"
+  ],
+  "productIDs": [
+   "C70A75"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": true,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Wireless Pro",
+  "bluetoothNames": [
+   "realme Buds Wireless Pro"
+  ],
+  "productIDs": [
+   "E3009F"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme",
+  "model": "realme Buds Air Neo",
+  "bluetoothNames": [
+   "realme Buds Air Neo"
+  ],
+  "productIDs": [
+   "F85450"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": {
+   "gameMode": null,
+   "wearDetection": null,
+   "dualConnection": null,
+   "smartVolume": null,
+   "bassWave": null,
+   "spatialAudio": null,
+   "goldenSound": null,
+   "powerSaving": null,
+   "hiRes": null,
+   "other": {}
+  },
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType"
+   ],
+   "transports": [
+    "S5 uuid"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": " No official feature list retrieved (realme.com pages not reachable via fetch/search)."
+ },
+ {
+  "brand": "realme (DIZO)",
+  "model": "DIZO Wireless",
+  "bluetoothNames": [
+   "DIZO Wireless"
+  ],
+  "productIDs": [
+   "C70A6E"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": null,
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType 2; uuid field 0000079A-D102-11E1-9B23-00025B00A5A5"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Listed by S5 only; non-OPO (protocolType 2). Features/protocol not documented."
+ },
+ {
+  "brand": "realme (DIZO)",
+  "model": "DIZO GoPods D",
+  "bluetoothNames": [
+   "DIZO GoPods D"
+  ],
+  "productIDs": [
+   "C70A6F"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": null,
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType 2; uuid field 0000079A-D102-11E1-9B23-00025B00A5A5"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Listed by S5 only; non-OPO (protocolType 2). Features/protocol not documented."
+ },
+ {
+  "brand": "realme (DIZO)",
+  "model": "DIZO GoPods",
+  "bluetoothNames": [
+   "DIZO GoPods"
+  ],
+  "productIDs": [
+   "C70A70"
+  ],
+  "protocol": "realmeLinkType2",
+  "transports": {
+   "rfcomm079A": null,
+   "spp1101": null,
+   "legacy1107": null,
+   "bleGATT079A": null
+  },
+  "noiseModes": null,
+  "eqPresets": null,
+  "featureSwitchIDs": null,
+  "gestures": null,
+  "customEQ": null,
+  "bassLevels": null,
+  "findEarbuds": null,
+  "fitTest": null,
+  "hearingTest": null,
+  "noiseCycle": null,
+  "officialFeatures": null,
+  "officialSpecURL": null,
+  "sources": {
+   "protocol": [
+    "S5 protocolType 2; uuid field 0000079A-D102-11E1-9B23-00025B00A5A5"
+   ]
+  },
+  "conflicts": [],
+  "confidence": "low",
+  "notes": "Listed by S5 only; non-OPO (protocolType 2). Features/protocol not documented."
+ }
+]
