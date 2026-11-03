@@ -13,6 +13,12 @@ public struct DiscoveredEarbuds: Sendable, Identifiable, Equatable {
     public var discoveryPaths: [String]
     public var transports: [TransportKind]
     public var isDemo: Bool
+    /// Names the BLE side uses when they differ from `name` (a renamed classic device still
+    /// advertises the model name over BLE).
+    public var bleNames: [String] = []
+    /// Set once the earbuds' reported product id picked a profile other than the name match (a
+    /// special edition sharing its base model's name); then it decides `profile`.
+    public var identifiedProfileID: String?
 
     public var id: String { name }
 
@@ -24,7 +30,10 @@ public struct DiscoveredEarbuds: Sendable, Identifiable, Equatable {
         self.isDemo = isDemo
     }
 
-    public var profile: DeviceProfile? { DeviceRegistry.match(name: name, productID: productID) }
+    public var profile: DeviceProfile? {
+        if let identifiedProfileID, let identified = DeviceRegistry.all.first(where: { $0.id == identifiedProfileID }) { return identified }
+        return DeviceRegistry.match(name: name, productID: productID)
+    }
 }
 
 /// Finds earbuds and creates transports. The Bluetooth implementation lives in OneBudsBluetooth;
@@ -41,6 +50,13 @@ public protocol DeviceConnector: AnyObject {
     func describe(_ transport: any EarbudTransport) -> String?
     /// Yields when a relevant device connects/disconnects or Bluetooth changes state.
     func deviceChanges() -> AsyncStream<Void>
+    /// Whether `kind` is usable for these earbuds right now, from local state only (no scan, no
+    /// paging, nothing sent). Used to switch back to the preferred route after a fallback.
+    func isRouteAvailable(_ kind: TransportKind, for earbuds: DiscoveredEarbuds) -> Bool
+}
+
+extension DeviceConnector {
+    public func isRouteAvailable(_ kind: TransportKind, for earbuds: DiscoveredEarbuds) -> Bool { false }
 }
 
 /// Simulated earbuds for the labelled Demo mode. Uses only `MockTransport`.

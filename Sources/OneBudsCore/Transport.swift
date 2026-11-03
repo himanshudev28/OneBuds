@@ -12,6 +12,63 @@ public enum TransportKind: String, Sendable, Codable, CaseIterable {
     }
 }
 
+/// Which control channels OneBuds may use. Automatic tries GATT first and falls back to RFCOMM,
+/// always limited to what the model's profile lists and what discovery found on the earbuds.
+public enum TransportPreference: String, Sendable, Codable, CaseIterable {
+    case automatic, bleOnly, rfcommOnly
+
+    public var displayName: String {
+        switch self {
+        case .automatic: "Automatic (GATT first, then RFCOMM)"
+        case .bleOnly: "Bluetooth LE (GATT) only"
+        case .rfcommOnly: "Classic Bluetooth (RFCOMM) only"
+        }
+    }
+
+    /// Keeps `order` (already the profile's preference) but drops kinds this preference excludes.
+    public func filter(_ order: [TransportKind]) -> [TransportKind] {
+        switch self {
+        case .automatic: order
+        case .bleOnly: order.filter { $0 == .ble || $0 == .mock }
+        case .rfcommOnly: order.filter { $0 == .rfcomm || $0 == .mock }
+        }
+    }
+}
+
+/// One try at opening a control channel, kept so the UI can say what was tried and why it failed.
+public struct TransportAttempt: Sendable, Equatable {
+    public enum Outcome: Sendable, Equatable {
+        case connected
+        case failed(String)
+    }
+
+    public var kind: TransportKind
+    public var outcome: Outcome
+
+    public init(kind: TransportKind, outcome: Outcome) {
+        self.kind = kind
+        self.outcome = outcome
+    }
+
+    public var summary: String {
+        switch outcome {
+        case .connected: "\(kind.shortName): connected"
+        case .failed(let reason): "\(kind.shortName): \(reason)"
+        }
+    }
+}
+
+extension TransportKind {
+    /// Short label for compact UI, e.g. "GATT".
+    public var shortName: String {
+        switch self {
+        case .ble: "GATT"
+        case .rfcomm: "RFCOMM"
+        case .mock: "Demo"
+        }
+    }
+}
+
 public enum TransportState: Sendable, Equatable {
     case idle
     case connecting
